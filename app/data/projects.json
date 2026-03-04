@@ -1,0 +1,69 @@
+[
+    {
+        "id": "swidomark",
+        "title": "SwidoMark",
+        "tagline": "Minimal SvelteKit Markdown Editor",
+        "description": "A lightweight live Markdown editor built with SvelteKit and Tauri — featuring instant preview, clipboard support, and local storage persistence.",
+        "year": 2025,
+        "role": "Fullstack Developer",
+        "status": "live",
+        "liveUrl": "https://github.com/ullaskunder3",
+        "repoUrl": "https://github.com/ullaskunder3",
+        "achievements": [
+            "Live Markdown editing with real-time HTML preview",
+            "Clipboard integration for seamless copy-paste workflows",
+            "Cross-platform desktop app via Tauri — lighter and faster than Electron",
+            "Distraction-free editor interface with clean, minimal design",
+            "Persistent local storage so editing sessions survive restarts",
+            "Light, dark, and semi-transparent UI themes"
+        ],
+        "technologies": [
+            "SvelteKit",
+            "Vite",
+            "TypeScript",
+            "Tauri",
+            "Markdown"
+        ],
+        "details": "SwidoMark pairs SvelteKit's reactive speed with Tauri's lightweight native shell. The result is a Markdown editor that launches instantly, previews in real time, and uses a fraction of the memory an Electron app would. Built for developers and writers who value focus over features.",
+        "gallery": [
+            {
+                "src": "/projects/swidomark/preview-1.webp",
+                "alt": "SwidoMark editor — live Markdown preview"
+            },
+            {
+                "src": "/projects/swidomark/preview-2.webp",
+                "alt": "SwidoMark editor — dark theme"
+            },
+            {
+                "src": "/projects/swidomark/preview-3.webp",
+                "alt": "SwidoMark editor — clipboard workflow"
+            }
+        ]
+    },
+    {
+        "id": "turai-blog",
+        "title": "Turai Blog",
+        "tagline": "Local-First Blog Writing App",
+        "description": "A lightweight, local blog writing app built with Tauri and React — replacing the old terminal-and-VS-Code workflow with an intuitive, interactive editor.",
+        "year": 2025,
+        "role": "Fullstack Developer",
+        "status": "coming-soon",
+        "liveUrl": null,
+        "repoUrl": "https://github.com/ullaskunder3",
+        "achievements": [
+            "Interactive post creation and editing UI",
+            "Built-in Markdown preview",
+            "Cover image management",
+            "Local-first architecture — no cloud dependency",
+            "Designed for a streamlined, enjoyable writing experience"
+        ],
+        "technologies": [
+            "Tauri",
+            "React",
+            "TypeScript",
+            "Rust"
+        ],
+        "details": "Turai Blog replaces the friction of creating blog posts through the terminal with a clean, purpose-built editor. Manage posts, preview content, and attach cover images — all in a fast, local environment powered by Tauri and React.",
+        "gallery": []
+    }
+]

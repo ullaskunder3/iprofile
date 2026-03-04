@@ -1,0 +1,348 @@
+@import "tailwindcss";
+
+/* ═══════════════════════════════════════════════════════════════
+   iprofile.dev — Design System
+   Color palette built on color-theory harmony (analogous + accent).
+   Golden ratio (φ ≈ 1.618) drives spacing and type scale.
+   Change the palette here → entire site updates.
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  /* ── Golden Ratio Scale (rem) ─────────────────────────── */
+  --phi: 1.618;
+  --space-xs: 0.382rem;
+  /* 1/φ² */
+  --space-sm: 0.618rem;
+  /* 1/φ   */
+  --space-md: 1rem;
+  --space-lg: 1.618rem;
+  /* φ     */
+  --space-xl: 2.618rem;
+  /* φ²    */
+  --space-2xl: 4.236rem;
+  /* φ³    */
+  --space-3xl: 6.854rem;
+  /* φ⁴    */
+
+  /* ── Type Scale (Golden Ratio) ────────────────────────── */
+  --text-xs: 0.694rem;
+  --text-sm: 0.833rem;
+  --text-base: 1rem;
+  --text-md: 1.2rem;
+  --text-lg: 1.618rem;
+  --text-xl: 2.058rem;
+  --text-2xl: 2.618rem;
+  --text-3xl: 3.33rem;
+  --text-4xl: 4.236rem;
+
+  /* ── Palette · Warm Dark ────────────────────────────────
+     Source: #5e0b15 · #90323d · #d9cab3 · #bc8034 · #8c7a6b
+     ─────────────────────────────────────────────────────── */
+  --bg-primary: #0e0a09;
+  --bg-secondary: #161110;
+  --bg-card: #1c1614;
+  --bg-card-hover: #241d1a;
+  --bg-glass: rgba(28, 22, 20, 0.7);
+
+  --text-primary: #d9cab3;
+  /* Warm cream                */
+  --text-secondary: #8c7a6b;
+  /* Warm taupe                */
+  --text-muted: #5e524a;
+
+  --accent: #90323d;
+  /* Rich crimson              */
+  --accent-light: #b34450;
+  /* Lighter crimson           */
+  --accent-glow: rgba(94, 11, 21, 0.35);
+  --accent-secondary: #bc8034;
+  /* Golden amber              */
+  --accent-tertiary: #5e0b15;
+  /* Deep wine                 */
+
+  --border: rgba(217, 202, 179, 0.07);
+  --border-hover: rgba(217, 202, 179, 0.14);
+
+  --success: #bc8034;
+  --warning: #d9cab3;
+
+  /* ── Misc ─────────────────────────────────────────────── */
+  --radius-sm: 0.5rem;
+  --radius-md: 0.875rem;
+  --radius-lg: 1.25rem;
+  --radius-xl: 1.75rem;
+  --radius-full: 9999px;
+
+  --shadow-card: 0 4px 24px rgba(0, 0, 0, 0.35);
+  --shadow-glow: 0 0 20px rgba(94, 11, 21, 0.15);
+
+  --transition-fast: 180ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@theme inline {
+  --color-background: var(--bg-primary);
+  --color-foreground: var(--text-primary);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Base Resets
+   ═══════════════════════════════════════════════════════════════ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+  line-height: 1.618;
+  /* golden ratio line height */
+}
+
+::selection {
+  background: var(--accent);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Utility Classes
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Glassmorphism card */
+.glass {
+  background: var(--bg-glass);
+  backdrop-filter: blur(16px) saturate(1.4);
+  -webkit-backdrop-filter: blur(16px) saturate(1.4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+}
+
+.glass:hover {
+  border-color: var(--border-hover);
+  box-shadow: var(--shadow-glow);
+  transition: all var(--transition-base);
+}
+
+/* Blur skeleton — tease hidden content */
+.blur-skeleton {
+  position: relative;
+  overflow: hidden;
+  filter: blur(5px);
+  user-select: none;
+  pointer-events: none;
+  opacity: 0.35;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, var(--accent-light), var(--accent-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Badge */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.3rem 0.75rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  border-radius: var(--radius-full);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  transition: background var(--transition-fast), color var(--transition-fast);
+}
+
+.badge--live {
+  background: rgba(188, 128, 52, 0.12);
+  color: var(--success);
+  border: 1px solid rgba(188, 128, 52, 0.22);
+}
+
+.badge--coming-soon {
+  background: rgba(217, 202, 179, 0.08);
+  color: var(--warning);
+  border: 1px solid rgba(217, 202, 179, 0.15);
+}
+
+/* Pill (tech tag) */
+.pill {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  color: var(--text-secondary);
+  background: rgba(144, 50, 61, 0.1);
+  border: 1px solid rgba(144, 50, 61, 0.18);
+  border-radius: var(--radius-full);
+  transition: all var(--transition-fast);
+}
+
+.pill:hover {
+  background: rgba(144, 50, 61, 0.25);
+  color: var(--accent-light);
+  transform: translateY(-1px);
+}
+
+/* CTA Button */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.618rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: linear-gradient(135deg, var(--accent), #6e1520);
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px var(--accent-glow);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.618rem;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--text-primary);
+  background: transparent;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all var(--transition-base);
+  text-decoration: none;
+}
+
+.btn-outline:hover {
+  border-color: var(--accent);
+  color: var(--accent-light);
+  transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Animated Background Grain
+   ═══════════════════════════════════════════════════════════════ */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   Glow Orbs (decorative)
+   ═══════════════════════════════════════════════════════════════ */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  opacity: 0.35;
+  pointer-events: none;
+  animation: float 14s ease-in-out infinite alternate;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+
+  100% {
+    transform: translateY(-40px) scale(1.08);
+  }
+}
+
+/* Entrance animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-in {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.delay-100 {
+  animation-delay: 100ms;
+}
+
+.delay-200 {
+  animation-delay: 200ms;
+}
+
+.delay-300 {
+  animation-delay: 300ms;
+}
+
+.delay-400 {
+  animation-delay: 400ms;
+}
+
+.delay-500 {
+  animation-delay: 500ms;
+}
+
+.delay-600 {
+  animation-delay: 600ms;
+}
+
+.delay-700 {
+  animation-delay: 700ms;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.4;
+    transform: scale(0.85);
+  }
+}
