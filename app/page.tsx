@@ -80,7 +80,12 @@ export default function Home() {
             }}
           >
             {projects.map((project, index) => (
-              <ProjectCard key={project.id} {...project} index={index} />
+              <ProjectCard
+                key={project.id}
+                {...project}
+                status={project.status as "live" | "coming-soon"}
+                index={index}
+              />
             ))}
           </div>
         </section>
