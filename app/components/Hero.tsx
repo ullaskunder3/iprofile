@@ -1,4 +1,6 @@
 import React from "react";
+import Image from "next/image";
+import Link from "next/link";
 import siteData from "../data/site.json";
 
 export default function Hero() {
@@ -113,103 +115,114 @@ export default function Hero() {
             lineHeight: 1.7,
             maxWidth: "42rem",
             margin: 0,
+            textWrap: "balance",
           }}
         >
           {siteData.subheadline}
         </p>
 
-        {/* CTA */}
-        <div
-          className="animate-in delay-400"
-          style={{
-            display: "flex",
-            gap: "var(--space-md)",
-            flexWrap: "wrap",
-            justifyContent: "center",
-          }}
-        >
-          <a href="#projects" className="btn-primary">
-            View Projects
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            >
-              <line x1="12" y1="5" x2="12" y2="19" />
-              <polyline points="19 12 12 19 5 12" />
-            </svg>
-          </a>
-          <a
-            href={siteData.ctaUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-outline"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-            </svg>
-            {siteData.ctaText}
-          </a>
-        </div>
-
-        {/* Mystery teaser — upcoming mobile app */}
-        <div
+        {/* Featured Product — PhysDaily showcase */}
+        <Link
+          href="/phys-daily"
           className="animate-in delay-500"
           style={{
-            marginTop: "var(--space-lg)",
-            padding: "var(--space-md) var(--space-lg)",
-            borderRadius: "var(--radius-lg)",
-            background: "var(--bg-glass)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-            border: "1px solid var(--border)",
-            maxWidth: "22rem",
+            display: "block",
+            position: "relative",
             width: "100%",
-            display: "flex",
-            flexDirection: "column",
-            gap: "var(--space-sm)",
+            maxWidth: "48rem",
+            textDecoration: "none",
+            color: "inherit",
           }}
         >
-          <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
-            <span
+          <div
+            style={{
+              position: "relative",
+              borderRadius: "var(--radius-xl)",
+              overflow: "hidden",
+              border: "1px solid var(--border)",
+              cursor: "pointer",
+              transition: "transform 0.3s ease, box-shadow 0.3s ease",
+            }}
+            className="featured-product-card"
+          >
+            {/* Large editorial text behind the phones */}
+            <div
               style={{
-                width: 8,
-                height: 8,
-                borderRadius: "50%",
-                background: "var(--accent-secondary)",
-                display: "inline-block",
-                animation: "pulse 2s ease-in-out infinite",
-              }}
-            />
-            <span
-              style={{
-                fontSize: "var(--text-xs)",
-                fontWeight: 600,
-                color: "var(--accent-secondary)",
-                textTransform: "uppercase",
-                letterSpacing: "0.1em",
+                position: "relative",
+                padding: "clamp(2rem, 5vw, 3.5rem) clamp(1.5rem, 4vw, 3rem)",
+                paddingBottom: 0,
+                display: "flex",
+                flexDirection: "column",
+                gap: "var(--space-sm)",
               }}
             >
-              Coming Up
-            </span>
+              <div style={{ display: "flex", alignItems: "center", gap: "var(--space-xs)", justifyContent: "center" }}>
+                <div className="badge badge--live" style={{ padding: "0.15rem 0.5rem", fontSize: 10 }}>LIVE</div>
+                <span
+                  style={{
+                    fontSize: "var(--text-xs)",
+                    fontWeight: 600,
+                    color: "var(--text-muted)",
+                    textTransform: "uppercase",
+                    letterSpacing: "0.1em",
+                  }}
+                >
+                  Featured Product
+                </span>
+              </div>
+
+              <h2
+                style={{
+                  fontSize: "clamp(2rem, 6vw, 3.5rem)",
+                  fontWeight: 800,
+                  lineHeight: 1.05,
+                  letterSpacing: "-0.04em",
+                  margin: 0,
+                  color: "var(--text-primary)",
+                  textWrap: "balance",
+                }}
+              >
+                Daily physics<br />
+                challenge for the{" "}
+                <span className="gradient-text">curious mind</span>
+              </h2>
+
+              <p
+                style={{
+                  fontSize: "var(--text-sm)",
+                  color: "var(--text-muted)",
+                  margin: "0 auto",
+                  maxWidth: "36ch",
+                  lineHeight: 1.5,
+                  textWrap: "balance",
+                }}
+              >
+                PhysDaily — The Physics Bowl. Sharpen your thinking in the age of AI.
+              </p>
+            </div>
+
+            {/* Phone mockups image */}
+            <div
+              style={{
+                position: "relative",
+                width: "100%",
+                aspectRatio: "16/10",
+                marginTop: "var(--space-md)",
+              }}
+            >
+              <Image
+                src="/img/phys-daily/feature-product.png"
+                alt="PhysDaily app screens showing daily challenge gameplay"
+                fill
+                style={{
+                  objectFit: "contain",
+                  objectPosition: "center bottom",
+                }}
+                priority
+              />
+            </div>
           </div>
-          <p
-            style={{
-              fontSize: "var(--text-sm)",
-              fontWeight: 600,
-              color: "var(--text-primary)",
-              margin: 0,
-              lineHeight: 1.4,
-            }}
-          >
-            Something for students. Built mobile-first.
-          </p>
-        </div>
+        </Link>
       </div>
     </section>
   );

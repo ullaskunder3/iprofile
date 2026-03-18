@@ -21,7 +21,7 @@ export default function Home() {
           style={{
             maxWidth: "64rem",
             margin: "0 auto",
-            padding: "var(--space-2xl) var(--space-xl) var(--space-3xl)",
+            padding: "var(--space-xl) var(--space-xl) var(--space-3xl)",
             display: "flex",
             flexDirection: "column",
             gap: "var(--space-xl)",
@@ -45,7 +45,7 @@ export default function Home() {
                 letterSpacing: "0.12em",
               }}
             >
-              What We&apos;re Building
+              Open Source
             </span>
             <h2
               style={{
@@ -64,10 +64,10 @@ export default function Home() {
                 color: "var(--text-secondary)",
                 margin: 0,
                 maxWidth: "50ch",
+                textWrap: "balance",
               }}
             >
-              Each project is crafted to solve a real problem — small, focused,
-              and open source.
+              Each project is crafted to solve a real problem — small, focused, and open source.
             </p>
           </div>
 
