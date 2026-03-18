@@ -408,7 +408,8 @@ export default function PhysDailyLanding() {
                 fontWeight: 500,
               }}
             >
-              We promise not to spam you. We don&apos;t have the energy for that. It&apos;s a one-time thing, not a sales pitch. 🫡
+              We promise not to spam you. We don&apos;t have the energy for
+              that. It&apos;s a one-time thing, not a sales pitch. 🫡
             </p>
           </div>
         </section>
@@ -416,9 +417,7 @@ export default function PhysDailyLanding() {
         {/* --- LEGAL FINE PRINT --- */}
         <div
           style={{
-            maxWidth: "64rem",
-            margin: "0 auto var(--space-4xl)",
-            padding: "0 var(--space-md)",
+            marginBottom: "20px",
             display: "flex",
             justifyContent: "center",
             gap: "var(--space-xl)",
@@ -438,7 +437,14 @@ export default function PhysDailyLanding() {
           >
             Privacy Policy
           </Link>
-          <div style={{ width: 4, height: 4, borderRadius: "50%", background: "var(--border)" }} />
+          <div
+            style={{
+              width: 4,
+              height: 4,
+              borderRadius: "50%",
+              background: "var(--border)",
+            }}
+          />
           <Link
             href="/phys-daily/terms"
             style={{
