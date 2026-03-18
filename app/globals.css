@@ -23,6 +23,8 @@
   /* φ³    */
   --space-3xl: 6.854rem;
   /* φ⁴    */
+  --space-4xl: 11.090rem;
+  /* φ⁵    */
 
   /* ── Type Scale (Golden Ratio) ────────────────────────── */
   --text-xs: 0.694rem;

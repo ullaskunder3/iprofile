@@ -19,7 +19,9 @@ export default function LegalPage({ title, lastUpdated, children }: LegalPagePro
         style={{
           maxWidth: "48rem",
           margin: "0 auto",
-          padding: "var(--space-3xl) var(--space-xl) var(--space-4xl)",
+          paddingTop: "calc(var(--space-3xl) + 80px)",
+          paddingBottom: "var(--space-4xl)",
+          paddingInline: "var(--space-xl)",
         }}
       >
         <div style={{ marginBottom: "var(--space-2xl)" }}>
