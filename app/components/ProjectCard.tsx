@@ -106,7 +106,8 @@ export default function ProjectCard({
         <p
           style={{
             fontSize: "var(--text-md)",
-            color: "var(--accent-secondary)",
+            color: "var(--text-primary)",
+            opacity: 0.9,
             fontWeight: 500,
             margin: 0,
           }}

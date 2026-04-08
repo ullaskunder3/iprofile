@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import siteData from "../data/site.json";
+import PlayStoreStatus from "./PlayStoreStatus";
 
 export default function Hero() {
   return (
@@ -160,6 +161,8 @@ export default function Hero() {
               {siteData.ctaText}
             </a>
           </div>
+
+          <PlayStoreStatus />
         </div>
       </section>
 
@@ -167,7 +170,7 @@ export default function Hero() {
 <section id="featured" className="max-w-5xl mx-auto px-6 mb-16">
   <Link href="/phys-daily" className="block group">
     
-    <div className="grid md:grid-cols-2 gap-6 items-center rounded-2xl p-6 overflow-hidden transition-all duration-300">
+    <div className="glass featured-product-card grid md:grid-cols-2 gap-6 items-center rounded-2xl p-6 overflow-hidden">
       
       {/* IMAGE */}
       <div className="relative w-full aspect-[16/10]">
@@ -187,8 +190,8 @@ export default function Hero() {
         <div className="space-y-2">
           
           <div className="flex items-center gap-2">
-            <span className="badge badge--live text-[10px] px-1.5 py-[2px]">
-              LIVE
+            <span className="badge badge--coming-soon text-[10px] px-1.5 py-[2px]">
+              IN TESTING
             </span>
             <span className="text-xs uppercase tracking-wider text-white/60">
               Featured

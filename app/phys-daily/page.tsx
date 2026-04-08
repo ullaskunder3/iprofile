@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import PlayStoreStatus from "../components/PlayStoreStatus";
 
 export const metadata = {
   title: "PhysDaily — The Physics Bowl",
@@ -34,8 +35,8 @@ export default function PhysDailyLanding() {
             gap: "var(--space-lg)",
           }}
         >
-          <div className="badge badge--live">
-            <span style={{ fontSize: 16 }}>🎮</span> Now Available for Android
+          <div className="badge badge--coming-soon">
+            <span style={{ fontSize: 16 }}>🚀</span> Undergoing Closed Testing
           </div>
 
           <h1
@@ -67,6 +68,8 @@ export default function PhysDailyLanding() {
             curiosity alive and your analytical skills sharp in the age of AI
             with a focused, daily physics problem.
           </p>
+
+          <PlayStoreStatus />
 
           <div
             style={{
