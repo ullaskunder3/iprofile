@@ -36,7 +36,7 @@ export default function PhysDailyLanding() {
           }}
         >
           <div className="badge badge--coming-soon">
-            <span style={{ fontSize: 16 }}>🚀</span> Undergoing Closed Testing
+            <span style={{ fontSize: 16 }}>🔍</span> Undergoing Production Review
           </div>
 
           <h1

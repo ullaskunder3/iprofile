@@ -191,7 +191,7 @@ export default function Hero() {
           
           <div className="flex items-center gap-2">
             <span className="badge badge--coming-soon text-[10px] px-1.5 py-[2px]">
-              IN TESTING
+              IN REVIEW
             </span>
             <span className="text-xs uppercase tracking-wider text-white/60">
               Featured

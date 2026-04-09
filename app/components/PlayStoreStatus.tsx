@@ -2,35 +2,29 @@
 
 import React, { useEffect, useState } from "react";
 
-const START_DATE = new Date("2026-03-27T00:00:00Z");
-const TARGET_DAYS = 14;
-const REQUIRED_TESTERS = 12;
+const APPLICATION_DATE = new Date("2026-04-09T11:51:00");
+const TARGET_REVIEW_DAYS = 7;
 
 export default function PlayStoreStatus() {
-  const [daysElapsed, setDaysElapsed] = useState(0);
-  const [progress, setProgress] = useState(0);
+  const [daysSinceApplied, setDaysSinceApplied] = useState(0);
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
     const calculateProgress = () => {
       const now = new Date();
-      const diffTime = now.getTime() - START_DATE.getTime();
-      const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)) + 1);
+      const diffTime = now.getTime() - APPLICATION_DATE.getTime();
+      const diffDays = Math.max(0, Math.floor(diffTime / (1000 * 60 * 60 * 24)));
       
-      setDaysElapsed(diffDays);
-      setProgress(Math.min(100, (diffDays / TARGET_DAYS) * 100));
+      setDaysSinceApplied(diffDays);
     };
 
     calculateProgress();
-    // Update every hour to be safe, though daily is enough
     const timer = setInterval(calculateProgress, 3600000);
     return () => clearInterval(timer);
   }, []);
 
   if (!isClient) return null;
-
-  const isComplete = daysElapsed >= TARGET_DAYS;
 
   return (
     <div
@@ -56,7 +50,7 @@ export default function PlayStoreStatus() {
           right: "-10%",
           width: "120px",
           height: "120px",
-          background: isComplete ? "var(--success)" : "var(--accent)",
+          background: "var(--accent-secondary)",
           filter: "blur(40px)",
           opacity: 0.1,
           zIndex: 0,
@@ -70,62 +64,85 @@ export default function PlayStoreStatus() {
               width: "8px", 
               height: "8px", 
               borderRadius: "50%", 
-              background: isComplete ? "var(--success)" : "#fbbc04", // Play Store yellow
-              boxShadow: isComplete ? "0 0 10px var(--success)" : "0 0 10px #fbbc04",
+              background: "#4285F4", // Google Blue
+              boxShadow: "0 0 10px #4285F4",
               display: "inline-block"
             }} />
             <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "var(--text-primary)", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-              Google Play Status: {isComplete ? "Ready for Production" : "Closed Testing"}
+              Google Play Status: Production Review
             </span>
           </div>
           <span style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)", fontWeight: 500 }}>
-            {daysElapsed}/{TARGET_DAYS} Days
+            {daysSinceApplied > 0 ? `${daysSinceApplied} days ago` : "Applied today"}
           </span>
         </div>
 
-        {/* Progress Bar */}
+        {/* Progress Bar (Indeterminate style) */}
         <div style={{ 
           height: "6px", 
           width: "100%", 
           background: "rgba(255, 255, 255, 0.05)", 
           borderRadius: "var(--radius-full)",
-          overflow: "hidden"
+          overflow: "hidden",
+          position: "relative"
         }}>
-          <div style={{ 
-            height: "100%", 
-            width: `${progress}%`, 
-            background: isComplete 
-              ? "linear-gradient(90deg, var(--success), #e6a23c)" 
-              : "linear-gradient(90deg, var(--accent), var(--accent-secondary))",
-            borderRadius: "var(--radius-full)",
-            transition: "width 1.5s cubic-bezier(0.34, 1.56, 0.64, 1)"
-          }} />
+          <div 
+            className="indeterminate-progress"
+            style={{ 
+              height: "100%", 
+              width: "40%", 
+              background: "linear-gradient(90deg, transparent, var(--accent-secondary), transparent)",
+              borderRadius: "var(--radius-full)",
+              position: "absolute",
+              left: "-100%",
+            }} 
+          />
         </div>
 
-        <div style={{ display: "flex", gap: "var(--space-md)", marginTop: "0.25rem" }}>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: "10px", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Testers</span>
-            <span style={{ fontSize: "var(--text-sm)", color: "var(--text-primary)", fontWeight: 600 }}>{REQUIRED_TESTERS}/12 Opted-in</span>
-          </div>
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <span style={{ fontSize: "10px", color: "var(--text-muted)", textTransform: "uppercase", letterSpacing: "0.05em" }}>Timeline</span>
-            <span style={{ fontSize: "var(--text-sm)", color: "var(--text-primary)", fontWeight: 600 }}>
-              {isComplete ? "Requirements Met" : `${TARGET_DAYS - daysElapsed} ${TARGET_DAYS - daysElapsed === 1 ? 'day' : 'days'} remaining`}
-            </span>
-          </div>
+        <div style={{ display: "flex", flexDirection: "column", gap: "2px", marginTop: "4px" }}>
+          <h4 style={{ 
+            fontSize: "var(--text-sm)", 
+            color: "var(--text-primary)", 
+            fontWeight: 600, 
+            margin: 0 
+          }}>
+            We have your application for production access
+          </h4>
+          <p style={{ 
+            fontSize: "12px", 
+            color: "var(--text-secondary)", 
+            margin: 0, 
+            lineHeight: 1.5,
+            opacity: 0.9
+          }}>
+            We&apos;re reviewing your application form. We&apos;ll email the account owner with an update. This usually takes {TARGET_REVIEW_DAYS} days or less, but may occasionally take longer.
+          </p>
         </div>
 
-        <p style={{ 
-          fontSize: "11px", 
-          color: "var(--text-secondary)", 
-          margin: 0, 
-          lineHeight: 1.4,
-          fontStyle: "italic",
-          opacity: 0.8
+        <div style={{ 
+          marginTop: "var(--space-xs)",
+          padding: "6px 10px",
+          background: "rgba(255, 255, 255, 0.03)",
+          borderRadius: "var(--radius-sm)",
+          display: "inline-flex",
+          alignItems: "center",
+          width: "fit-content"
         }}>
-          Currently running a closed test to meet Google Play&apos;s production criteria. Access to the Play Store will be available once the 14-day testing period concludes.
-        </p>
+          <span style={{ fontSize: "10px", color: "var(--text-muted)", fontWeight: 500 }}>
+            APPLIED: APRIL 9, 2026 • 11:51 AM
+          </span>
+        </div>
       </div>
+
+      <style jsx>{`
+        @keyframes indeterminate {
+          0% { left: -100%; }
+          100% { left: 100%; }
+        }
+        .indeterminate-progress {
+          animation: indeterminate 2s infinite linear;
+        }
+      `}</style>
     </div>
   );
 }
