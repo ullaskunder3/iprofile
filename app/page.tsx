@@ -18,10 +18,10 @@ export default function Home() {
         {/* Projects Section */}
         <section
           id="projects"
+          className="px-4 md:px-12"
           style={{
             maxWidth: "64rem",
             margin: "0 auto",
-            padding: "var(--space-xl) var(--space-xl) var(--space-3xl)",
             display: "flex",
             flexDirection: "column",
             gap: "var(--space-xl)",

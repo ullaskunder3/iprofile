@@ -1,5 +1,32 @@
 [
     {
+        "id": "darvin-ide",
+        "title": "Darvin IDE",
+        "tagline": "Plug-and-play modern C++/Qt IDE",
+        "description": "A beginner-friendly desktop IDE that lets you write and run C, C++, and SDL3 programs instantly—no compiler setup required.",
+        "year": 2026,
+        "role": "Lead Developer",
+        "status": "live",
+        "liveUrl": "https://github.com/ullaskunder3/darvin/releases/tag/v0.1.1-beta",
+        "repoUrl": "https://github.com/ullaskunder3/darvin",
+        "achievements": [
+            "In-built C/C++ compiler integration for instant setup",
+            "Native SDL3 graphics support for high-performance apps",
+            "Modern Qt-based UI with built-in terminal and editor",
+            "Portable and Installer versions for Windows students",
+            "Turbo C-like simplicity with modern C++ power"
+        ],
+        "technologies": [
+            "C++",
+            "Qt",
+            "SDL3",
+            "CMake",
+            "NSIS"
+        ],
+        "details": "Darvin is designed to bring back the 'just works' experience for students. It eliminates the friction of setting up include paths, library linking, and environment variables, allowing students to focus on coding from minute one.",
+        "gallery": []
+    },
+    {
         "id": "swidomark",
         "title": "SwidoMark",
         "tagline": "Minimal SvelteKit Markdown Editor",
