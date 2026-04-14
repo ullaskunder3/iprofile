@@ -35,8 +35,8 @@ export default function PhysDailyLanding() {
             gap: "var(--space-lg)",
           }}
         >
-          <div className="badge badge--coming-soon">
-            <span style={{ fontSize: 16 }}>🔍</span> Undergoing Production Review
+          <div className="badge badge--live">
+            <span style={{ fontSize: 16 }}>🚀</span> Now Available on Google Play
           </div>
 
           <h1
@@ -81,12 +81,18 @@ export default function PhysDailyLanding() {
             }}
           >
             <a
-              href="https://forms.gle/i6T2WeqszCVqdceK9"
+              href="https://play.google.com/store/apps/details?id=com.iprofilelabs.physdaily"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
+              style={{ display: "inline-block" }}
             >
-              Get Early Access
+              <Image
+                src="/img/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={168}
+                height={50}
+                style={{ objectFit: "contain" }}
+              />
             </a>
             <a
               href="https://ullaskunder.tech/contact"
@@ -344,7 +350,7 @@ export default function PhysDailyLanding() {
                 letterSpacing: "-0.02em",
               }}
             >
-              Be the first to play.
+              Now Available!
             </h2>
 
             <p
@@ -357,8 +363,7 @@ export default function PhysDailyLanding() {
                 fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
               }}
             >
-              We&apos;re onboarding early testers. Join the list and be among
-              the first to solve daily physics challenges.
+              PhysDaily has officially launched. Download it today and start your journey of solving daily physics challenges.
             </p>
           </div>
 
@@ -374,13 +379,18 @@ export default function PhysDailyLanding() {
             }}
           >
             <a
-              href="https://forms.gle/i6T2WeqszCVqdceK9"
+              href="https://play.google.com/store/apps/details?id=com.iprofilelabs.physdaily"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ padding: "0.875rem 2rem", fontSize: "1rem" }}
+              style={{ display: "inline-block" }}
             >
-              Request Test Access
+              <Image
+                src="/img/google-play-badge.png"
+                alt="Get it on Google Play"
+                width={200}
+                height={60}
+                style={{ objectFit: "contain" }}
+              />
             </a>
             <a
               href="https://ullaskunder.tech/contact"
