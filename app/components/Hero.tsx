@@ -166,73 +166,126 @@ export default function Hero() {
         </div>
       </section>
 
+      {/* ═══ FEATURED WRITING — Blog Section (Compact) ═══ */}
+      <section className="max-w-6xl mx-auto px-4 md:px-12 mb-20 md:mb-32">
+        <div className="flex flex-col gap-6">
+          {/* Label */}
+          <div className="flex items-center gap-3">
+            <span className="text-[10px] uppercase font-black tracking-[0.2em] text-accent-light">
+              Journal
+            </span>
+            <div className="h-[1px] flex-1 bg-white/5" />
+          </div>
+          <div className="flex flex-col lg:flex-row gap-12 lg:gap-20 items-center">
+
+            {/* Large Image Side */}
+            <div className="w-full lg:w-1/2 aspect-video relative rounded-3xl overflow-hidden group/img bg-white border border-white/10 shadow-2xl">
+              <Image
+                src="/img/phys-daily/image.png"
+                alt="PhysDaily on Google Play Store"
+                fill
+                className="object-contain p-2 md:p-4 transition-transform duration-700 group-hover/img:scale-[1.02]"
+              />
+            </div>
+
+            {/* Content Side */}
+            <div className="w-full lg:w-1/2 flex flex-col gap-6">
+              <div className="flex flex-col gap-4">
+                <h2 className="text-xl md:text-2xl lg:text-3xl font-extrabold text-white leading-tight tracking-tight text-balance">
+                  Shipping PhysDaily: <br className="hidden lg:block" />
+                  A Solo Engineer&apos;s Blueprint
+                </h2>
+
+                <p className="text-base md:text-lg text-white/50 max-w-[45ch] text-balance">
+                  A technical deep dive into building a high-stakes physics challenge app using Flutter, Firebase, and AI.
+                </p>
+              </div>
+
+              <a
+                href="https://ullaskunder.tech/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-4 w-fit py-4 px-8 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-sm font-bold text-white transition-all group/article"
+              >
+                Read full article
+                <div className="flex items-center justify-center w-6 h-6 rounded-full bg-accent-light text-white transition-transform group-hover/article:translate-x-1.5">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
       {/* ═══ FEATURED PRODUCT — PhysDaily ═══ */}
-    <section id="featured" className="max-w-5xl mx-auto px-4 md:px-12 mb-24 md:mb-32">
-      <Link href="/phys-daily" className="block group">
-        <div className="glass featured-product-card relative flex flex-col md:flex-row items-stretch rounded-[2rem] md:rounded-[3.5rem] mt-24 md:mt-40 transition-all duration-500 hover:border-white/20" style={{ padding: 0 }}>
-          
-          {/* IMAGE SIDE — Adaptive breakout with overlap prevention */}
-          <div className="relative w-full md:w-[45%] lg:w-[42%] min-h-[300px] sm:min-h-[380px] md:min-h-[500px] flex items-center justify-center">
-            <div className="absolute 
+      <section id="featured" className="max-w-5xl mx-auto px-4 md:px-12 mb-24 md:mb-32">
+        <Link href="/phys-daily" className="block group">
+          <div className="glass featured-product-card relative flex flex-col md:flex-row items-stretch rounded-[2rem] md:rounded-[3.5rem] mt-12 transition-all duration-500 hover:border-white/20" style={{ padding: 0 }}>
+
+            {/* IMAGE SIDE — Adaptive breakout with overlap prevention */}
+            <div className="relative w-full md:w-[45%] lg:w-[42%] min-h-[300px] sm:min-h-[380px] md:min-h-[500px] flex items-center justify-center">
+              <div className="absolute 
               -top-12 sm:-top-16 md:-top-16 lg:-top-24 
               -bottom-8 sm:-bottom-12 md:-bottom-16 lg:-bottom-24 
               -left-2 sm:-left-4 md:-left-8 lg:-left-20 
               w-[105%] sm:w-[110%] md:w-[115%] lg:w-[130%] 
               z-30 transition-transform duration-700 group-hover:scale-[1.03] pointer-events-none"
-            >
-              <Image
-                src="/img/phys-daily/feature-product.png"
-                alt="PhysDaily app screens"
-                fill
-                className="object-contain drop-shadow-[0_45px_100px_rgba(0,0,0,0.7)]"
-                priority
-              />
+              >
+                <Image
+                  src="/img/phys-daily/feature-product.png"
+                  alt="PhysDaily app screens"
+                  fill
+                  className="object-contain drop-shadow-[0_45px_100px_rgba(0,0,0,0.7)]"
+                  priority
+                />
+              </div>
             </div>
-          </div>
 
-          {/* CONTENT SIDE */}
-          <div className="w-full md:w-[55%] lg:w-[58%] flex flex-col justify-center p-8 sm:p-12 md:p-14 lg:p-24 md:pl-4 lg:pl-8 gap-6 md:gap-8">
-            
-            <div className="flex flex-col gap-4">
-              
-              <div className="flex items-center gap-3">
-                <span className="text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-accent-secondary">
-                  Featured Experience
+            {/* CONTENT SIDE */}
+            <div className="w-full md:w-[55%] lg:w-[58%] flex flex-col justify-center p-8 sm:p-12 md:p-14 lg:p-24 md:pl-4 lg:pl-8 gap-6 md:gap-8">
+
+              <div className="flex flex-col gap-4">
+
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-accent-secondary">
+                    Featured Experience
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <h2 className="text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold leading-[1.05] tracking-tight text-white">
+                    PhysDaily —<br />
+                    <span className="gradient-text">The Physics Bowl</span>
+                  </h2>
+                  <p className="text-[14px] sm:text-[16px] md:text-[var(--text-md)] text-white/50 leading-relaxed max-w-[38ch] font-medium">
+                    Reimagining physics education through high-stakes gamified challenges and real-time interactive problem sets.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Flutter</span>
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Firebase</span>
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Dart</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end mt-4 pt-6 sm:pt-8 border-t border-white/5">
+                <span className="flex items-center gap-2 sm:gap-3 text-sm md:text-base font-black text-accent-light transition-all duration-300 group-hover:gap-5 group-hover:text-white">
+                  Explore Project
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg>
                 </span>
               </div>
 
-              <div className="flex flex-col gap-3 sm:gap-4">
-                <h2 className="text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold leading-[1.05] tracking-tight text-white">
-                  PhysDaily —<br/>
-                  <span className="gradient-text">The Physics Bowl</span>
-                </h2>
-                <p className="text-[14px] sm:text-[16px] md:text-[var(--text-md)] text-white/50 leading-relaxed max-w-[38ch] font-medium">
-                  Reimagining physics education through high-stakes gamified challenges and real-time interactive problem sets.
-                </p>
-              </div>
-
-              <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
-                <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Flutter</span>
-                <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Firebase</span>
-                <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Dart</span>
-              </div>
-            </div>
-
-            <div className="flex items-center justify-end mt-4 pt-6 sm:pt-8 border-t border-white/5">
-              <span className="flex items-center gap-2 sm:gap-3 text-sm md:text-base font-black text-accent-light transition-all duration-300 group-hover:gap-5 group-hover:text-white">
-                Explore Project
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
-                  <path d="M5 12h14" />
-                  <path d="M12 5l7 7-7 7" />
-                </svg>
-              </span>
             </div>
 
           </div>
-
-        </div>
-      </Link>
-    </section>
+        </Link>
+      </section>
     </>
   );
 }
