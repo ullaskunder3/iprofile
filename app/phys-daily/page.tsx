@@ -95,7 +95,7 @@ export default function PhysDailyLanding() {
               />
             </a>
             <a
-              href="https://ullaskunder.tech/contact"
+              href="http://ullaskunder.com/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
@@ -104,10 +104,10 @@ export default function PhysDailyLanding() {
             </a>
 
             <a 
-              href="https://ullaskunder.tech/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
+              href="http://ullaskunder.com/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-accent-light hover:text-white transition-all flex items-center gap-1.5 px-4 h-[50px] group/story"
+              className="text-xs font-bold text-white/60 hover:text-white transition-all flex items-center gap-1.5 px-4 h-[50px] group/story"
             >
               <svg className="w-4 h-4 transition-transform group-hover/story:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
                  <path d="M7 7h10v10M7 17L17 7"/>
@@ -304,10 +304,10 @@ export default function PhysDailyLanding() {
             </p>
             <div style={{ marginTop: "var(--space-sm)" }}>
               <a 
-                href="https://ullaskunder.tech/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
+                href="http://ullaskunder.com/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-accent-light hover:text-white transition-all"
+                className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-all"
               >
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                   <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
@@ -359,7 +359,7 @@ export default function PhysDailyLanding() {
             height={72}
             style={{
               borderRadius: 16,
-              boxShadow: "0 8px 32px rgba(144, 50, 61, 0.25)",
+              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
               position: "relative",
               zIndex: 1,
             }}
@@ -419,7 +419,7 @@ export default function PhysDailyLanding() {
               />
             </a>
             <a
-              href="https://ullaskunder.tech/contact"
+              href="http://ullaskunder.com/contact"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"

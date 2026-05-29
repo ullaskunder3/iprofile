@@ -1,5 +1,6 @@
 import React from "react";
 import siteData from "../data/site.json";
+import Logo from "./Logo";
 
 export default function Header() {
   return (
@@ -17,7 +18,7 @@ export default function Header() {
         justifyContent: "space-between",
         backdropFilter: "blur(16px) saturate(1.4)",
         WebkitBackdropFilter: "blur(16px) saturate(1.4)",
-        background: "rgba(14, 10, 9, 0.75)",
+        background: "rgba(5, 5, 5, 0.8)",
         borderBottom: "1px solid var(--border)",
       }}
     >
@@ -27,35 +28,9 @@ export default function Header() {
           textDecoration: "none",
           display: "flex",
           alignItems: "center",
-          gap: "var(--space-xs)",
         }}
       >
-        <span
-          style={{
-            width: 28,
-            height: 28,
-            borderRadius: "var(--radius-sm)",
-            background: "linear-gradient(135deg, var(--accent), var(--accent-tertiary))",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "var(--text-sm)",
-            fontWeight: 800,
-            color: "#fff",
-          }}
-        >
-          i
-        </span>
-        <span
-          style={{
-            fontSize: "var(--text-md)",
-            fontWeight: 700,
-            color: "var(--text-primary)",
-            letterSpacing: "-0.02em",
-          }}
-        >
-          {siteData.domain}
-        </span>
+        <Logo size="md" />
       </a>
 
       <nav style={{ display: "flex", alignItems: "center", gap: "var(--space-lg)" }}>

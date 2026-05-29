@@ -1,5 +1,6 @@
 import React from "react";
 import siteData from "../data/site.json";
+import Logo from "./Logo";
 
 export default function Footer() {
   const year = new Date().getFullYear();
@@ -17,39 +18,7 @@ export default function Footer() {
         textAlign: "center",
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          alignItems: "center",
-          gap: "var(--space-xs)",
-        }}
-      >
-        <span
-          style={{
-            width: 22,
-            height: 22,
-            borderRadius: "var(--radius-sm)",
-            background: "linear-gradient(135deg, var(--accent), var(--accent-tertiary))",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            fontSize: "0.65rem",
-            fontWeight: 800,
-            color: "#fff",
-          }}
-        >
-          i
-        </span>
-        <span
-          style={{
-            fontSize: "var(--text-sm)",
-            fontWeight: 600,
-            color: "var(--text-primary)",
-          }}
-        >
-          {siteData.domain}
-        </span>
-      </div>
+      <Logo size="sm" />
 
       <p
         style={{
@@ -72,7 +41,7 @@ export default function Footer() {
         }}
       >
         <a
-          href="https://ullaskunder.tech/"
+          href="http://ullaskunder.com/"
           target="_blank"
           rel="noopener noreferrer"
           className="btn-outline"

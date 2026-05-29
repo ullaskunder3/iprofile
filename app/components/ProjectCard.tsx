@@ -137,7 +137,7 @@ export default function ProjectCard({
           lineHeight: 1.7,
           margin: 0,
           maxWidth: "65ch",
-          borderLeft: "2px solid var(--accent-glow)",
+          borderLeft: "2px solid rgba(255, 255, 255, 0.1)",
           paddingLeft: "var(--space-md)",
         }}
       >

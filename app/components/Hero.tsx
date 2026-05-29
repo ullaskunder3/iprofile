@@ -18,7 +18,6 @@ export default function Hero() {
           textAlign: "center",
           minHeight: "60vh",
           padding: "var(--space-3xl) var(--space-xl) var(--space-2xl)",
-          overflow: "hidden",
         }}
       >
         {/* Decorative glow orbs */}
@@ -27,7 +26,7 @@ export default function Hero() {
           style={{
             width: 420,
             height: 420,
-            background: "var(--accent)",
+            background: "#ffffff",
             top: "-10%",
             left: "-8%",
           }}
@@ -37,7 +36,7 @@ export default function Hero() {
           style={{
             width: 300,
             height: 300,
-            background: "var(--accent-tertiary)",
+            background: "#666666",
             bottom: "5%",
             right: "-5%",
             animationDelay: "3s",
@@ -48,11 +47,11 @@ export default function Hero() {
           style={{
             width: 200,
             height: 200,
-            background: "var(--accent-secondary)",
+            background: "#444444",
             top: "40%",
             right: "20%",
             animationDelay: "6s",
-            opacity: 0.2,
+            opacity: 0.12,
           }}
         />
 
@@ -76,10 +75,10 @@ export default function Hero() {
               gap: "0.5rem",
               padding: "0.4rem 1rem",
               borderRadius: "var(--radius-full)",
-              background: "rgba(144, 50, 61, 0.1)",
-              border: "1px solid rgba(144, 50, 61, 0.2)",
+              background: "rgba(255, 255, 255, 0.04)",
+              border: "1px solid rgba(255, 255, 255, 0.1)",
               fontSize: "var(--text-xs)",
-              color: "var(--accent-light)",
+              color: "var(--text-secondary)",
               fontWeight: 500,
               letterSpacing: "0.04em",
             }}
@@ -171,7 +170,7 @@ export default function Hero() {
         <div className="flex flex-col gap-6">
           {/* Label */}
           <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase font-black tracking-[0.2em] text-accent-light">
+            <span className="text-[10px] uppercase font-black tracking-[0.2em] text-accent-secondary">
               Journal
             </span>
             <div className="h-[1px] flex-1 bg-white/5" />
@@ -202,13 +201,13 @@ export default function Hero() {
               </div>
 
               <a
-                href="https://ullaskunder.tech/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
+                href="http://ullaskunder.com/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-4 w-fit py-4 px-8 rounded-full border border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20 text-sm font-bold text-white transition-all group/article"
               >
                 Read full article
-                <div className="flex items-center justify-center w-6 h-6 rounded-full bg-accent-light text-white transition-transform group-hover/article:translate-x-1.5">
+                <div className="flex items-center justify-center w-6 h-6 rounded-full bg-white/15 text-white transition-transform group-hover/article:translate-x-1.5">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
                     <path d="M5 12h14" />
                     <path d="M12 5l7 7-7 7" />
@@ -249,7 +248,7 @@ export default function Hero() {
               <div className="flex flex-col gap-4">
 
                 <div className="flex items-center gap-3">
-                  <span className="text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-accent-secondary">
+                  <span className="text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-white/40">
                     Featured Experience
                   </span>
                 </div>
@@ -272,7 +271,7 @@ export default function Hero() {
               </div>
 
               <div className="flex items-center justify-end mt-4 pt-6 sm:pt-8 border-t border-white/5">
-                <span className="flex items-center gap-2 sm:gap-3 text-sm md:text-base font-black text-accent-light transition-all duration-300 group-hover:gap-5 group-hover:text-white">
+                <span className="flex items-center gap-2 sm:gap-3 text-sm md:text-base font-black text-white/60 transition-all duration-300 group-hover:gap-5 group-hover:text-white">
                   Explore Project
                   <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
                     <path d="M5 12h14" />

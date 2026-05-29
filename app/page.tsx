@@ -12,7 +12,7 @@ export default function Home() {
 
       <Header />
 
-      <main id="main-content">
+      <main id="main-content" style={{ paddingBottom: "var(--space-4xl)" }}>
         <Hero />
 
         {/* Projects Section */}

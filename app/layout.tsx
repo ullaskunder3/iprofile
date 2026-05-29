@@ -13,10 +13,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://iprofile.dev"),
+  metadataBase: new URL("https://www.xforbes.com"),
   title: {
-    default: "iprofile.dev — Developer Tools & Open-Source Projects",
-    template: "%s | iprofile.dev",
+    default: "xforbes.com — Developer Tools & Open-Source Projects",
+    template: "%s | xforbes.com",
   },
   description:
     "Discover lightweight, open-source developer tools built by Ullas Kunder. From SwidoMark, a minimal Markdown editor, to upcoming mobile apps — crafted to simplify workflows and ship ideas faster.",
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     "SwidoMark",
     "Markdown editor",
     "Turai Blog",
-    "iprofile.dev",
+    "xforbes.com",
     "Ullas Kunder",
     "SvelteKit",
     "Tauri",
@@ -35,9 +35,9 @@ export const metadata: Metadata = {
     "fullstack developer",
     "developer portfolio",
   ],
-  authors: [{ name: "Ullas Kunder", url: "https://ullaskunder.tech" }],
+  authors: [{ name: "Ullas Kunder", url: "http://ullaskunder.com/" }],
   creator: "Ullas Kunder",
-  publisher: "iprofile.dev",
+  publisher: "xforbes.com",
   robots: {
     index: true,
     follow: true,
@@ -50,20 +50,20 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://iprofile.dev",
+    canonical: "https://www.xforbes.com",
   },
   openGraph: {
-    title: "iprofile.dev — Developer Tools & Open-Source Projects",
+    title: "xforbes.com — Developer Tools & Open-Source Projects",
     description:
       "Lightweight, focused tools for developers — crafted to simplify workflows and ship ideas faster. By Ullas Kunder.",
-    url: "https://iprofile.dev",
-    siteName: "iprofile.dev",
+    url: "https://www.xforbes.com",
+    siteName: "xforbes.com",
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "iprofile.dev — Developer Tools & Open-Source Projects",
+    title: "xforbes.com — Developer Tools & Open-Source Projects",
     description:
       "Lightweight, focused tools for developers — crafted to simplify workflows and ship ideas faster.",
     creator: "@ullaskunder",
