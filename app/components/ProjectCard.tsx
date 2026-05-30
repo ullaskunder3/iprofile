@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 interface ProjectCardProps {
   id: string;
@@ -185,7 +186,20 @@ export default function ProjectCard({
             Source Code
           </a>
         )}
-        {status === "coming-soon" && (
+        {status === "coming-soon" && liveUrl && (
+          <Link
+            href={liveUrl}
+            className="btn-primary"
+            style={{ padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            Sneak Peek
+          </Link>
+        )}
+        {status === "coming-soon" && !liveUrl && (
           <span
             className="btn-outline"
             style={{ cursor: "default", opacity: 0.6, padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}

@@ -66,26 +66,43 @@ export default function Hero() {
             gap: "var(--space-lg)",
           }}
         >
-          {/* Domain pill */}
-          <div
-            className="animate-in delay-100"
+          {/* Announcement pill */}
+          <Link
+            href="/pin-tube"
+            className="animate-in delay-100 group hover:border-white/20 hover:bg-white/5 transition-all"
             style={{
               display: "inline-flex",
               alignItems: "center",
-              gap: "0.5rem",
-              padding: "0.4rem 1rem",
+              gap: "0.6rem",
+              padding: "0.3rem 0.8rem 0.3rem 0.3rem",
               borderRadius: "var(--radius-full)",
               background: "rgba(255, 255, 255, 0.04)",
               border: "1px solid rgba(255, 255, 255, 0.1)",
               fontSize: "var(--text-xs)",
               color: "var(--text-secondary)",
               fontWeight: 500,
-              letterSpacing: "0.04em",
+              textDecoration: "none",
             }}
           >
-            <span style={{ fontSize: "1rem" }}>⚡</span>
-            {siteData.domain}
-          </div>
+            <span style={{ 
+              background: "var(--accent)", 
+              color: "#000",
+              padding: "0.2rem 0.6rem",
+              borderRadius: "var(--radius-full)",
+              fontSize: "0.65rem",
+              fontWeight: 800,
+              textTransform: "uppercase",
+              letterSpacing: "0.05em"
+            }}>Sneak Peek</span>
+            <span className="text-white/80 group-hover:text-white transition-colors">Pin-Tube Chrome Extension</span>
+            <svg 
+              className="transition-transform group-hover:translate-x-1 text-white/50 group-hover:text-white" 
+              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
+            >
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </Link>
 
           {/* Headline */}
           <h1
