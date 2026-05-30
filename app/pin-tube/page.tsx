@@ -445,6 +445,32 @@ export default function PinTubeLanding() {
           </div>
         </section>
 
+        {/* --- LEGAL FINE PRINT --- */}
+        <div
+          style={{
+            marginBottom: "20px",
+            display: "flex",
+            justifyContent: "center",
+            gap: "var(--space-xl)",
+            alignItems: "center",
+            marginTop: "var(--space-2xl)",
+          }}
+        >
+          <Link
+            href="/pin-tube/privacy"
+            style={{
+              fontSize: "0.85rem",
+              color: "var(--text-secondary)",
+              textDecoration: "none",
+              borderBottom: "1px solid transparent",
+              transition: "all 0.2s ease",
+              fontWeight: 500,
+            }}
+            className="hover:text-white"
+          >
+            Privacy Policy
+          </Link>
+        </div>
       </main>
 
       <Footer />
