@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import siteData from "../data/site.json";
 import PlayStoreStatus from "./PlayStoreStatus";
+import ExtensionStatus from "./ExtensionStatus";
 
 export default function Hero() {
   return (
@@ -178,7 +179,17 @@ export default function Hero() {
             </a>
           </div>
 
-          <PlayStoreStatus />
+          <div style={{ 
+            display: "flex", 
+            flexDirection: "column", 
+            gap: "var(--space-sm)", 
+            width: "100%", 
+            maxWidth: "32rem", 
+            marginTop: "var(--space-xl)" 
+          }}>
+            <ExtensionStatus />
+            <PlayStoreStatus />
+          </div>
         </div>
       </section>
 

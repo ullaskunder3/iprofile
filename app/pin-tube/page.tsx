@@ -34,18 +34,18 @@ export default function PinTubeLanding() {
             gap: "var(--space-lg)",
           }}
         >
-          <div className="badge badge--coming-soon" style={{ marginBottom: "var(--space-xs)" }}>
+          <div className="badge" style={{ marginBottom: "var(--space-xs)", borderColor: "rgba(139, 92, 246, 0.3)", background: "rgba(139, 92, 246, 0.1)", color: "#a78bfa" }}>
             <span
               style={{
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: "var(--warning)",
+                background: "#8b5cf6",
                 display: "inline-block",
                 animation: "pulse 2s infinite",
               }}
             />
-            <span style={{ fontWeight: 600 }}>In Development — Coming Soon</span>
+            <span style={{ fontWeight: 600 }}>In Review — Coming Soon</span>
           </div>
 
           <Image

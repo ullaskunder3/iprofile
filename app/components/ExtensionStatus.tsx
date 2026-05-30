@@ -1,9 +1,9 @@
 "use client";
 
 import React from "react";
-import Image from "next/image";
+import Link from "next/link";
 
-export default function PlayStoreStatus() {
+export default function ExtensionStatus() {
   return (
     <div
       className="animate-in delay-500"
@@ -11,7 +11,7 @@ export default function PlayStoreStatus() {
         width: "100%",
         padding: "var(--space-md)",
         background: "rgba(255, 255, 255, 0.03)",
-        border: "1px solid rgba(255, 255, 255, 0.08)",
+        border: "1px solid rgba(139, 92, 246, 0.2)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
         position: "relative",
@@ -30,9 +30,9 @@ export default function PlayStoreStatus() {
           right: "-10%",
           width: "120px",
           height: "120px",
-          background: "#ffffff",
+          background: "#8b5cf6",
           filter: "blur(50px)",
-          opacity: 0.04,
+          opacity: 0.1,
           zIndex: 0,
         }}
       />
@@ -43,12 +43,13 @@ export default function PlayStoreStatus() {
             width: "8px", 
             height: "8px", 
             borderRadius: "50%", 
-            background: "var(--success)", 
-            boxShadow: "0 0 10px rgba(255, 255, 255, 0.15)",
-            display: "inline-block"
+            background: "#8b5cf6", 
+            boxShadow: "0 0 10px rgba(139, 92, 246, 0.4)",
+            display: "inline-block",
+            animation: "pulse 2s infinite"
           }} />
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "var(--success)", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-            Available Now
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#a78bfa", letterSpacing: "0.02em", textTransform: "uppercase" }}>
+            In Review
           </span>
         </div>
 
@@ -58,7 +59,7 @@ export default function PlayStoreStatus() {
           fontWeight: 600, 
           margin: 0 
         }}>
-          Live on Google Play
+          Submitted to Chrome Web Store
         </h4>
         <p style={{ 
           fontSize: "12px", 
@@ -67,28 +68,35 @@ export default function PlayStoreStatus() {
           lineHeight: 1.5,
           opacity: 0.9
         }}>
-          PhysDaily is now fully reviewed and ready to download!
+          Pin-Tube is currently pending review by Google.
         </p>
       </div>
 
-      <a 
-        href="https://play.google.com/store/apps/details?id=com.iprofilelabs.physdaily"
-        target="_blank"
-        rel="noopener noreferrer"
+      <Link 
+        href="/pin-tube"
         style={{
           position: "relative",
           zIndex: 1,
           display: "inline-flex",
+          alignItems: "center",
+          gap: "0.5rem",
+          padding: "0.5rem 1rem",
+          borderRadius: "var(--radius-md)",
+          background: "rgba(139, 92, 246, 0.1)",
+          color: "#a78bfa",
+          fontSize: "0.75rem",
+          fontWeight: 600,
+          border: "1px solid rgba(139, 92, 246, 0.2)",
+          textDecoration: "none"
         }}
+        className="hover:bg-[rgba(139,92,246,0.2)] transition-colors"
       >
-        <Image
-          src="/img/google-play-badge.png"
-          alt="Get it on Google Play"
-          width={135}
-          height={40}
-          style={{ objectFit: "contain" }}
-        />
-      </a>
+        Sneak Peek
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
+        </svg>
+      </Link>
     </div>
   );
 }

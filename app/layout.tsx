@@ -26,6 +26,8 @@ export const metadata: Metadata = {
     "SwidoMark",
     "Markdown editor",
     "Turai Blog",
+    "Pin-Tube",
+    "Chrome Extension",
     "xforbes.com",
     "Ullas Kunder",
     "SvelteKit",

@@ -8,7 +8,7 @@ interface ProjectCardProps {
   description: string;
   year: number;
   role: string;
-  status: "live" | "coming-soon";
+  status: "live" | "coming-soon" | "in-review";
   liveUrl: string | null;
   repoUrl: string | null;
   achievements: string[];
@@ -77,18 +77,18 @@ export default function ProjectCard({
             </span>
           </div>
 
-          <span className={status === "live" ? "badge badge--live" : "badge badge--coming-soon"}>
+          <span className={status === "live" ? "badge badge--live" : status === "in-review" ? "badge" : "badge badge--coming-soon"} style={{ borderColor: status === "in-review" ? "rgba(139, 92, 246, 0.3)" : undefined, background: status === "in-review" ? "rgba(139, 92, 246, 0.1)" : undefined, color: status === "in-review" ? "#a78bfa" : undefined }}>
             <span
               style={{
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: status === "live" ? "var(--success)" : "var(--warning)",
+                background: status === "live" ? "var(--success)" : status === "in-review" ? "#8b5cf6" : "var(--warning)",
                 display: "inline-block",
                 animation: status === "live" ? undefined : "pulse 2s infinite",
               }}
             />
-            {status === "live" ? "Live" : "Coming Soon"}
+            {status === "live" ? "Live" : status === "in-review" ? "In Review" : "Coming Soon"}
           </span>
         </div>
 
@@ -186,7 +186,7 @@ export default function ProjectCard({
             Source Code
           </a>
         )}
-        {status === "coming-soon" && liveUrl && (
+        {(status === "coming-soon" || status === "in-review") && liveUrl && (
           <Link
             href={liveUrl}
             className="btn-primary"
@@ -199,7 +199,7 @@ export default function ProjectCard({
             Sneak Peek
           </Link>
         )}
-        {status === "coming-soon" && !liveUrl && (
+        {(status === "coming-soon" || status === "in-review") && !liveUrl && (
           <span
             className="btn-outline"
             style={{ cursor: "default", opacity: 0.6, padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}
@@ -208,7 +208,7 @@ export default function ProjectCard({
               <circle cx="12" cy="12" r="10"/>
               <polyline points="12 6 12 12 16 14"/>
             </svg>
-            In Progress
+            {status === "in-review" ? "In Review" : "In Progress"}
           </span>
         )}
       </div>
