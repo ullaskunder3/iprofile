@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import ZoomableImage from "../components/ZoomableImage";
 
 export const metadata = {
   title: "Pin-Tube — The Smart YouTube Pinner",
@@ -34,18 +35,18 @@ export default function PinTubeLanding() {
             gap: "var(--space-lg)",
           }}
         >
-          <div className="badge" style={{ marginBottom: "var(--space-xs)", borderColor: "rgba(139, 92, 246, 0.3)", background: "rgba(139, 92, 246, 0.1)", color: "#a78bfa" }}>
+          <div className="badge" style={{ marginBottom: "var(--space-xs)", borderColor: "rgba(16, 185, 129, 0.3)", background: "rgba(16, 185, 129, 0.1)", color: "#34d399" }}>
             <span
               style={{
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: "#8b5cf6",
+                background: "#10b981",
                 display: "inline-block",
-                animation: "pulse 2s infinite",
+                boxShadow: "0 0 10px rgba(16, 185, 129, 0.4)"
               }}
             />
-            <span style={{ fontWeight: 600 }}>In Review — Coming Soon</span>
+            <span style={{ fontWeight: 600 }}>Available on Chrome Web Store</span>
           </div>
 
           <Image
@@ -99,13 +100,13 @@ export default function PinTubeLanding() {
             }}
           >
             <a
-              href="#"
+              href="https://chromewebstore.google.com/detail/pin-tube/oehonkhbilmcmmpcnbpocpoomldofejd"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-outline"
               style={{ padding: "0.875rem 1.75rem", fontSize: "1rem", color: "var(--text-primary)", borderColor: "var(--border)", opacity: 0.8 }}
             >
-              Coming Soon to Chrome Web Store
+              Get it on Chrome Web Store
             </a>
           </div>
         </section>
@@ -113,7 +114,7 @@ export default function PinTubeLanding() {
         {/* --- WIDE HERO BANNER --- */}
         <section
           style={{
-            maxWidth: "72rem",
+            maxWidth: "96rem",
             margin: "var(--space-2xl) auto",
             padding: "0 var(--space-md)",
           }}
@@ -122,25 +123,28 @@ export default function PinTubeLanding() {
             className="glass"
             style={{
               position: "relative",
-              aspectRatio: "16/9",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
+              border: "1px solid rgba(255, 255, 255, 0.05)"
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/pin-tube/first.png"
               alt="Pin-Tube Extension Interface"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
-              priority
             />
             <div
               style={{
                 position: "absolute",
-                inset: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "20%",
                 background:
-                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 25%)",
+                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 100%)",
+                pointerEvents: "none",
+                zIndex: 2,
               }}
             />
           </div>
@@ -149,11 +153,11 @@ export default function PinTubeLanding() {
         {/* --- THE PROBLEM & PLAN --- */}
         <section
           style={{
-            maxWidth: "64rem",
+            maxWidth: "80rem",
             margin: "var(--space-3xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+            gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
             gap: "var(--space-xl)",
           }}
         >
@@ -197,31 +201,28 @@ export default function PinTubeLanding() {
         {/* --- FEATURE HIGHLIGHT 1 --- */}
         <section
           style={{
-            maxWidth: "64rem",
-            margin: "var(--space-3xl) auto",
+            maxWidth: "80rem",
+            margin: "var(--space-4xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "var(--space-xl)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
+            gap: "var(--space-2xl)",
             alignItems: "center",
           }}
         >
           <div
             className="glass"
             style={{
-              position: "relative",
-              aspectRatio: "1/1",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
               boxShadow: "var(--shadow-card)",
+              border: "1px solid rgba(255, 255, 255, 0.05)"
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/pin-tube/second.png"
               alt="Seamless UI Integration"
-              fill
-              style={{ objectFit: "cover" }}
             />
           </div>
 
@@ -230,16 +231,17 @@ export default function PinTubeLanding() {
               display: "flex",
               flexDirection: "column",
               gap: "var(--space-md)",
-              padding: "0 var(--space-xs)",
+              padding: "0 var(--space-md)",
             }}
           >
             <h2
               style={{
-                fontSize: "clamp(1.5rem, 4vw, 1.875rem)",
+                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
                 margin: 0,
                 letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               Seamless UI
@@ -249,10 +251,10 @@ export default function PinTubeLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 textWrap: "balance",
-                lineHeight: 1.6,
+                lineHeight: 1.7,
               }}
             >
               We wrote a smart script that patiently waits for YouTube&apos;s video player to load, and injects a custom pushpin SVG button right next to the native settings gear. It looks exactly like it belongs there.
@@ -260,10 +262,10 @@ export default function PinTubeLanding() {
             
             <h2
               style={{
-                fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
-                margin: "var(--space-md) 0 0",
+                margin: "var(--space-xl) 0 0",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -272,10 +274,10 @@ export default function PinTubeLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 textWrap: "balance",
-                lineHeight: 1.6,
+                lineHeight: 1.7,
               }}
             >
               To make the &quot;Pinned Videos&quot; row on the homepage look native, we hooked into YouTube&apos;s internal CSS variables and used ResizeObserver. Our pinned videos perfectly adapt and resize their columns exactly when YouTube&apos;s grid resizes, seamlessly tying into native dark/light modes.
@@ -286,12 +288,12 @@ export default function PinTubeLanding() {
         {/* --- FEATURE HIGHLIGHT 2 --- */}
         <section
           style={{
-            maxWidth: "64rem",
-            margin: "var(--space-3xl) auto",
+            maxWidth: "80rem",
+            margin: "var(--space-4xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "var(--space-xl)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
+            gap: "var(--space-2xl)",
             alignItems: "center",
           }}
         >
@@ -300,16 +302,17 @@ export default function PinTubeLanding() {
               display: "flex",
               flexDirection: "column",
               gap: "var(--space-md)",
-              padding: "0 var(--space-xs)",
+              padding: "0 var(--space-md)",
             }}
           >
             <h2
               style={{
-                fontSize: "clamp(1.5rem, 4vw, 1.875rem)",
+                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
                 margin: 0,
                 letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               The &quot;Smart Resume&quot;
@@ -319,7 +322,7 @@ export default function PinTubeLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 lineHeight: 1.7,
                 textWrap: "balance",
@@ -330,10 +333,10 @@ export default function PinTubeLanding() {
 
             <h2
               style={{
-                fontSize: "clamp(1.2rem, 3vw, 1.5rem)",
+                fontSize: "clamp(1.5rem, 4vw, 2rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
-                margin: "var(--space-md) 0 0",
+                margin: "var(--space-xl) 0 0",
                 letterSpacing: "-0.01em",
               }}
             >
@@ -342,7 +345,7 @@ export default function PinTubeLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 lineHeight: 1.7,
                 textWrap: "balance",
@@ -355,18 +358,16 @@ export default function PinTubeLanding() {
           <div
             className="glass"
             style={{
-              position: "relative",
-              aspectRatio: "1/1",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
+              boxShadow: "var(--shadow-card)",
+              border: "1px solid rgba(255, 255, 255, 0.05)"
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/pin-tube/third.png"
               alt="Distraction Blocking and Popup Menu"
-              fill
-              style={{ objectFit: "cover" }}
             />
           </div>
         </section>
@@ -374,12 +375,12 @@ export default function PinTubeLanding() {
         {/* --- EXTRA FEATURES --- */}
         <section
           style={{
-            maxWidth: "64rem",
-            margin: "var(--space-3xl) auto",
+            maxWidth: "80rem",
+            margin: "var(--space-4xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "var(--space-xl)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
+            gap: "var(--space-2xl)",
           }}
         >
           <div
@@ -392,23 +393,20 @@ export default function PinTubeLanding() {
              <div
                 className="glass"
                 style={{
-                  position: "relative",
-                  aspectRatio: "16/9",
                   width: "100%",
                   borderRadius: "var(--radius-xl)",
                   overflow: "hidden",
                   boxShadow: "var(--shadow-card)",
+                  border: "1px solid rgba(255, 255, 255, 0.05)"
                 }}
               >
-                <Image
+                <ZoomableImage
                   src="/img/pin-tube/forth.png"
                   alt="Management Dashboard"
-                  fill
-                  style={{ objectFit: "cover" }}
                 />
               </div>
-             <h3 style={{ fontSize: "1.25rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Smart Tab Management</h3>
-             <p style={{ color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+             <h3 style={{ fontSize: "1.5rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Smart Tab Management</h3>
+             <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.6, margin: 0 }}>
                 To prevent opening duplicate &quot;Manage Videos&quot; tabs, we gave the extension tabs permission. A background service worker intelligently searches open tabs—if the dashboard is already open, it just snaps your screen over to it instead of spawning a new one.
              </p>
           </div>
@@ -423,23 +421,20 @@ export default function PinTubeLanding() {
              <div
                 className="glass"
                 style={{
-                  position: "relative",
-                  aspectRatio: "16/9",
                   width: "100%",
                   borderRadius: "var(--radius-xl)",
                   overflow: "hidden",
                   boxShadow: "var(--shadow-card)",
+                  border: "1px solid rgba(255, 255, 255, 0.05)"
                 }}
               >
-                <Image
+                <ZoomableImage
                   src="/img/pin-tube/fifth.png"
                   alt="Onboarding and Dashboard"
-                  fill
-                  style={{ objectFit: "cover" }}
                 />
               </div>
-             <h3 style={{ fontSize: "1.25rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Onboarding &amp; Obfuscation</h3>
-             <p style={{ color: "var(--text-secondary)", lineHeight: 1.6, margin: 0 }}>
+             <h3 style={{ fontSize: "1.5rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Onboarding &amp; Obfuscation</h3>
+             <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.6, margin: 0 }}>
                 We built an automatic onboarding screen that teaches users how to pin. We squashed the code using <strong>Vite &amp; Terser</strong> into a single highly-minified build, protecting the logic while remaining compliant with Chrome Web Store policies.
              </p>
           </div>

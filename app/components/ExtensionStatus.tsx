@@ -11,7 +11,7 @@ export default function ExtensionStatus() {
         width: "100%",
         padding: "var(--space-md)",
         background: "rgba(255, 255, 255, 0.03)",
-        border: "1px solid rgba(139, 92, 246, 0.2)",
+        border: "1px solid rgba(245, 158, 11, 0.2)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
         position: "relative",
@@ -30,7 +30,7 @@ export default function ExtensionStatus() {
           right: "-10%",
           width: "120px",
           height: "120px",
-          background: "#8b5cf6",
+          background: "#f59e0b",
           filter: "blur(50px)",
           opacity: 0.1,
           zIndex: 0,
@@ -43,13 +43,13 @@ export default function ExtensionStatus() {
             width: "8px", 
             height: "8px", 
             borderRadius: "50%", 
-            background: "#8b5cf6", 
-            boxShadow: "0 0 10px rgba(139, 92, 246, 0.4)",
+            background: "#f59e0b", 
+            boxShadow: "0 0 10px rgba(245, 158, 11, 0.4)",
             display: "inline-block",
-            animation: "pulse 2s infinite"
+            animation: "pulse 2s ease-in-out infinite"
           }} />
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#a78bfa", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-            In Review
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#fbbf24", letterSpacing: "0.02em", textTransform: "uppercase" }}>
+            Pending Review
           </span>
         </div>
 
@@ -59,7 +59,7 @@ export default function ExtensionStatus() {
           fontWeight: 600, 
           margin: 0 
         }}>
-          Submitted to Chrome Web Store
+          v1.3 Update Submitted to Chrome Web Store
         </h4>
         <p style={{ 
           fontSize: "12px", 
@@ -68,12 +68,11 @@ export default function ExtensionStatus() {
           lineHeight: 1.5,
           opacity: 0.9
         }}>
-          Pin-Tube is currently pending review by Google.
+          Bug fix update is under review — will be available soon!
         </p>
       </div>
 
-      <Link 
-        href="/pin-tube"
+      <span
         style={{
           position: "relative",
           zIndex: 1,
@@ -82,21 +81,20 @@ export default function ExtensionStatus() {
           gap: "0.5rem",
           padding: "0.5rem 1rem",
           borderRadius: "var(--radius-md)",
-          background: "rgba(139, 92, 246, 0.1)",
-          color: "#a78bfa",
+          background: "rgba(245, 158, 11, 0.1)",
+          color: "#fbbf24",
           fontSize: "0.75rem",
           fontWeight: 600,
-          border: "1px solid rgba(139, 92, 246, 0.2)",
-          textDecoration: "none"
+          border: "1px solid rgba(245, 158, 11, 0.2)",
+          whiteSpace: "nowrap"
         }}
-        className="hover:bg-[rgba(139,92,246,0.2)] transition-colors"
       >
-        Sneak Peek
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
+          <circle cx="12" cy="12" r="10"></circle>
+          <polyline points="12 6 12 12 16 14"></polyline>
         </svg>
-      </Link>
+        In Review
+      </span>
     </div>
   );
 }

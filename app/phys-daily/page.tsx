@@ -4,6 +4,7 @@ import Link from "next/link";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import PlayStoreStatus from "../components/PlayStoreStatus";
+import ZoomableImage from "../components/ZoomableImage";
 
 export const metadata = {
   title: "PhysDaily — The Physics Bowl",
@@ -120,7 +121,7 @@ export default function PhysDailyLanding() {
         {/* --- WIDE HERO BANNER --- */}
         <section
           style={{
-            maxWidth: "72rem",
+            maxWidth: "96rem",
             margin: "var(--space-2xl) auto",
             padding: "0 var(--space-md)",
           }}
@@ -129,25 +130,28 @@ export default function PhysDailyLanding() {
             className="glass"
             style={{
               position: "relative",
-              aspectRatio: "16/9",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
+              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
+              border: "1px solid rgba(255, 255, 255, 0.05)"
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/phys-daily/mockup3.png"
               alt="PhysDaily App flow showing dashboard, question, and completion screens"
-              fill
-              style={{ objectFit: "cover", objectPosition: "center" }}
-              priority
             />
             <div
               style={{
                 position: "absolute",
-                inset: 0,
+                bottom: 0,
+                left: 0,
+                right: 0,
+                height: "20%",
                 background:
-                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 25%)",
+                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 100%)",
+                pointerEvents: "none",
+                zIndex: 2,
               }}
             />
           </div>
@@ -156,12 +160,12 @@ export default function PhysDailyLanding() {
         {/* --- FEATURE GRID --- */}
         <section
           style={{
-            maxWidth: "64rem",
-            margin: "var(--space-3xl) auto",
+            maxWidth: "80rem",
+            margin: "var(--space-4xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "var(--space-xl)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
+            gap: "var(--space-2xl)",
             alignItems: "center",
           }}
         >
@@ -170,16 +174,17 @@ export default function PhysDailyLanding() {
               display: "flex",
               flexDirection: "column",
               gap: "var(--space-md)",
-              padding: "0 var(--space-xs)",
+              padding: "0 var(--space-md)",
             }}
           >
             <h2
               style={{
-                fontSize: "clamp(1.5rem, 4vw, 1.875rem)",
+                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
                 margin: 0,
                 letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               The Science of
@@ -189,10 +194,10 @@ export default function PhysDailyLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 textWrap: "balance",
-                lineHeight: 1.6,
+                lineHeight: 1.7,
               }}
             >
               PhysDaily isn&apos;t just another quiz. It&apos;s a carefully
@@ -205,19 +210,16 @@ export default function PhysDailyLanding() {
           <div
             className="glass"
             style={{
-              position: "relative",
-              aspectRatio: "1/1",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
               boxShadow: "var(--shadow-card)",
+              border: "1px solid rgba(255, 255, 255, 0.05)"
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/phys-daily/mockup2.png"
               alt="Close-up of the tactile virtual QWERTY keyboard and game interface"
-              fill
-              style={{ objectFit: "cover" }}
             />
           </div>
         </section>
@@ -226,31 +228,29 @@ export default function PhysDailyLanding() {
         <section
           id="story"
           style={{
-            maxWidth: "64rem",
-            margin: "var(--space-3xl) auto",
+            maxWidth: "80rem",
+            margin: "var(--space-4xl) auto",
             padding: "0 var(--space-md)",
             display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
-            gap: "var(--space-xl)",
+            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
+            gap: "var(--space-2xl)",
             alignItems: "center",
           }}
         >
           <div
             className="glass"
             style={{
-              position: "relative",
-              aspectRatio: "4/5",
               width: "100%",
               borderRadius: "var(--radius-xl)",
               overflow: "hidden",
+              boxShadow: "var(--shadow-card)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
               order: -1,
             }}
           >
-            <Image
+            <ZoomableImage
               src="/img/phys-daily/mockup1.png"
               alt="Developer space with mechanical pencils and free-body diagrams"
-              fill
-              style={{ objectFit: "cover" }}
             />
           </div>
 
@@ -259,7 +259,7 @@ export default function PhysDailyLanding() {
               display: "flex",
               flexDirection: "column",
               gap: "var(--space-md)",
-              padding: "0 var(--space-xs)",
+              padding: "0 var(--space-md)",
             }}
           >
             <span
@@ -275,11 +275,12 @@ export default function PhysDailyLanding() {
             </span>
             <h2
               style={{
-                fontSize: "clamp(1.5rem, 4vw, 1.875rem)",
+                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
                 fontWeight: 700,
                 color: "var(--text-primary)",
                 margin: 0,
                 letterSpacing: "-0.02em",
+                lineHeight: 1.1,
               }}
             >
               Curiosity in the
@@ -289,7 +290,7 @@ export default function PhysDailyLanding() {
             <p
               style={{
                 color: "var(--text-secondary)",
-                fontSize: "var(--text-base)",
+                fontSize: "1.1rem",
                 margin: 0,
                 lineHeight: 1.7,
                 textWrap: "balance",
