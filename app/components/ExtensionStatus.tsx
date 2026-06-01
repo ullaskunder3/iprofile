@@ -11,7 +11,7 @@ export default function ExtensionStatus() {
         width: "100%",
         padding: "var(--space-md)",
         background: "rgba(255, 255, 255, 0.03)",
-        border: "1px solid rgba(245, 158, 11, 0.2)",
+        border: "1px solid rgba(16, 185, 129, 0.2)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
         position: "relative",
@@ -30,9 +30,9 @@ export default function ExtensionStatus() {
           right: "-10%",
           width: "120px",
           height: "120px",
-          background: "#f59e0b",
+          background: "#10b981",
           filter: "blur(50px)",
-          opacity: 0.1,
+          opacity: 0.08,
           zIndex: 0,
         }}
       />
@@ -43,13 +43,12 @@ export default function ExtensionStatus() {
             width: "8px", 
             height: "8px", 
             borderRadius: "50%", 
-            background: "#f59e0b", 
-            boxShadow: "0 0 10px rgba(245, 158, 11, 0.4)",
-            display: "inline-block",
-            animation: "pulse 2s ease-in-out infinite"
+            background: "#10b981", 
+            boxShadow: "0 0 10px rgba(16, 185, 129, 0.4)",
+            display: "inline-block"
           }} />
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#fbbf24", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-            Pending Review
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#34d399", letterSpacing: "0.02em", textTransform: "uppercase" }}>
+            Available Now
           </span>
         </div>
 
@@ -59,7 +58,7 @@ export default function ExtensionStatus() {
           fontWeight: 600, 
           margin: 0 
         }}>
-          v1.3 Update Submitted to Chrome Web Store
+          v1.3 Live on Chrome Web Store
         </h4>
         <p style={{ 
           fontSize: "12px", 
@@ -68,11 +67,14 @@ export default function ExtensionStatus() {
           lineHeight: 1.5,
           opacity: 0.9
         }}>
-          Bug fix update is under review — will be available soon!
+          The smart YouTube Pinner update has been approved and is now public!
         </p>
       </div>
 
-      <span
+      <a
+        href="https://chromewebstore.google.com/detail/pin-tube/oehonkhbilmcmmpcnbpocpoomldofejd"
+        target="_blank"
+        rel="noopener noreferrer"
         style={{
           position: "relative",
           zIndex: 1,
@@ -81,20 +83,23 @@ export default function ExtensionStatus() {
           gap: "0.5rem",
           padding: "0.5rem 1rem",
           borderRadius: "var(--radius-md)",
-          background: "rgba(245, 158, 11, 0.1)",
-          color: "#fbbf24",
+          background: "rgba(16, 185, 129, 0.1)",
+          color: "#34d399",
           fontSize: "0.75rem",
           fontWeight: 600,
-          border: "1px solid rgba(245, 158, 11, 0.2)",
-          whiteSpace: "nowrap"
+          border: "1px solid rgba(16, 185, 129, 0.2)",
+          whiteSpace: "nowrap",
+          textDecoration: "none",
+          transition: "all 0.2s ease"
         }}
       >
         <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10"></circle>
-          <polyline points="12 6 12 12 16 14"></polyline>
+          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+          <polyline points="15 3 21 3 21 9"></polyline>
+          <line x1="10" y1="14" x2="21" y2="3"></line>
         </svg>
-        In Review
-      </span>
+        Get Extension
+      </a>
     </div>
   );
 }
