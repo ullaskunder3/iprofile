@@ -69,7 +69,7 @@ export default function Hero() {
         >
           {/* Announcement pill */}
           <Link
-            href="/pin-tube"
+            href="/kanade"
             className="animate-in delay-100 group hover:border-white/20 hover:bg-white/5 transition-all"
             style={{
               display: "inline-flex",
@@ -94,8 +94,8 @@ export default function Hero() {
               fontWeight: 800,
               textTransform: "uppercase",
               letterSpacing: "0.05em"
-            }}>Sneak Peek</span>
-            <span className="text-white/80 group-hover:text-white transition-colors">Pin-Tube Chrome Extension</span>
+            }}>New Release</span>
+            <span className="text-white/80 group-hover:text-white transition-colors">Kanade — AI Duet Synthesizer</span>
             <svg 
               className="transition-transform group-hover:translate-x-1 text-white/50 group-hover:text-white" 
               width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
@@ -295,6 +295,70 @@ export default function Hero() {
                   <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Flutter</span>
                   <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Firebase</span>
                   <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Dart</span>
+                </div>
+              </div>
+
+              <div className="flex items-center justify-end mt-4 pt-6 sm:pt-8 border-t border-white/5">
+                <span className="flex items-center gap-2 sm:gap-3 text-sm md:text-base font-black text-white/60 transition-all duration-300 group-hover:gap-5 group-hover:text-white">
+                  Explore Project
+                  <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3.5">
+                    <path d="M5 12h14" />
+                    <path d="M12 5l7 7-7 7" />
+                  </svg>
+                </span>
+              </div>
+
+            </div>
+
+          </div>
+        </Link>
+      </section>
+
+      {/* ═══ FEATURED PRODUCT — Kanade ═══ */}
+      <section id="featured-kanade" className="max-w-5xl mx-auto px-4 md:px-12 mb-24 md:mb-32">
+        <Link href="/kanade" className="block group">
+          <div className="glass featured-product-card relative flex flex-col md:flex-row items-stretch rounded-[2rem] md:rounded-[3.5rem] transition-all duration-500 hover:border-white/20" style={{ padding: 0 }}>
+
+            {/* IMAGE SIDE — Styled for desktop screenshot with glass border */}
+            <div className="relative w-full md:w-[48%] lg:w-[45%] min-h-[300px] sm:min-h-[380px] md:min-h-[480px] flex items-center justify-center p-6 sm:p-8">
+              <div className="relative w-full h-full min-h-[250px] sm:min-h-[300px] md:min-h-[360px] rounded-2xl overflow-hidden border border-white/10 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
+                <Image
+                  src="/img/kanade/desktop_view.png"
+                  alt="Kanade AI Composer interface"
+                  fill
+                  className="object-cover"
+                />
+              </div>
+            </div>
+
+            {/* CONTENT SIDE */}
+            <div className="w-full md:w-[52%] lg:w-[55%] flex flex-col justify-center p-8 sm:p-12 md:p-14 lg:p-24 md:pl-4 lg:pl-8 gap-6 md:gap-8">
+
+              <div className="flex flex-col gap-4">
+
+                <div className="flex items-center gap-3">
+                  <span className="text-[10px] uppercase font-black tracking-[0.2em] sm:tracking-[0.3em] text-white/40">
+                    New Release
+                  </span>
+                  <span className="pill text-[9px] font-bold py-0.5 px-2 border-white/20 bg-white/10 text-white uppercase tracking-wider">
+                    Featured
+                  </span>
+                </div>
+
+                <div className="flex flex-col gap-3 sm:gap-4">
+                  <h2 className="text-[clamp(1.5rem,6vw,3.5rem)] font-extrabold leading-[1.05] tracking-tight text-white">
+                    Kanade —<br />
+                    <span className="gradient-text">AI Composer</span>
+                  </h2>
+                  <p className="text-[14px] sm:text-[16px] md:text-[var(--text-md)] text-white/50 leading-relaxed max-w-[38ch] font-medium">
+                    A zero-frustration synthesizer and AI composer where every keypress resolves to beautiful harmony.
+                  </p>
+                </div>
+
+                <div className="flex flex-wrap gap-2 pt-1 sm:pt-2">
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Next.js</span>
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">Web Audio API</span>
+                  <span className="pill text-[10px] font-bold py-1.5 px-3 border-white/10 bg-white/5">TypeScript</span>
                 </div>
               </div>
 

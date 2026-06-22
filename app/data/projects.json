@@ -1,5 +1,45 @@
 [
     {
+        "id": "kanade",
+        "title": "Kanade",
+        "tagline": "Zero-Frustration Synthesizer & AI Composer",
+        "description": "A synthesizer and AI musical duet assistant designed to guarantee that there are no wrong notes.",
+        "year": 2026,
+        "role": "Creator / Developer",
+        "status": "live",
+        "liveUrl": "/kanade",
+        "repoUrl": null,
+        "achievements": [
+            "Zero-Frustration scale mapping dynamically locking keys to Major Pentatonic, Major Diatonic, and Hirajōshi",
+            "Bilingual First-Order Markov Chain composer trained on musical motifs (like Sakura Sakura and Happy Birthday)",
+            "Real-time AI Duet mode that listens and completes your melodies when you pause",
+            "Pure synthesis engine running on native Web Audio API",
+            "High-speed WAV export using OfflineAudioContext for instant downloads",
+            "Ultra-compact bit-packed URL serialization for database-free composition sharing"
+        ],
+        "technologies": [
+            "Next.js",
+            "Web Audio API",
+            "TypeScript",
+            "Tailwind CSS"
+        ],
+        "details": "Kanade is a highly specialized ringtone synthesizer and AI composer. Designed on the philosophy that 'there are no wrong notes,' it maps your keyboard strictly to curated musical scales like Hirajōshi so every keypress sounds beautiful. It also features a bilingual Markov Chain AI composer for real-time duets, pure synthesis at 432 Hz, and high-speed WAV exports, all running seamlessly in the browser.",
+        "gallery": [
+            {
+                "src": "/img/kanade/desktop_view.png",
+                "alt": "Kanade Web Piano Interface"
+            },
+            {
+                "src": "/img/kanade/tablet_view.png",
+                "alt": "Kanade Synthesizer and Scale Control Interface"
+            },
+            {
+                "src": "/img/kanade/mobile_view.png",
+                "alt": "Kanade AI Composer Settings and Recording Panel"
+            }
+        ]
+    },
+    {
         "id": "pin-tube",
         "title": "Pin-Tube",
         "tagline": "The Smart YouTube Pinner",
