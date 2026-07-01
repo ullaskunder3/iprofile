@@ -370,7 +370,7 @@ export default function Hero() {
               
               {/* Content */}
               <div style={{ padding: "var(--space-md)", display: "flex", flexDirection: "column", gap: "var(--space-sm)", flex: 1 }}>
-                <span style={{ fontSize: "10px", uppercase: true, fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
+                <span style={{ fontSize: "10px", textTransform: "uppercase", fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
                   Featured Experience
                 </span>
                 <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
@@ -432,7 +432,7 @@ export default function Hero() {
               
               {/* Content */}
               <div style={{ padding: "var(--space-md)", display: "flex", flexDirection: "column", gap: "var(--space-sm)", flex: 1 }}>
-                <span style={{ fontSize: "10px", uppercase: true, fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
+                <span style={{ fontSize: "10px", textTransform: "uppercase", fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
                   New Release
                 </span>
                 <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
