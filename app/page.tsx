@@ -20,7 +20,7 @@ export default function Home() {
           id="projects"
           className="px-4 md:px-12"
           style={{
-            maxWidth: "64rem",
+            maxWidth: "72rem",
             margin: "0 auto",
             display: "flex",
             flexDirection: "column",
