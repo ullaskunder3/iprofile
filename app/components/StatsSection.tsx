@@ -43,8 +43,8 @@ export default function StatsSection() {
         flexDirection: "column", 
         gap: "var(--space-xl)",
         padding: "var(--space-xl) 0",
-        borderTop: "1px solid rgba(255, 255, 255, 0.05)",
-        borderBottom: "1px solid rgba(255, 255, 255, 0.05)",
+        borderTop: "1px solid var(--border)",
+        borderBottom: "1px solid var(--border)",
       }}>
         {/* Header for Trust */}
         <div style={{ 
@@ -114,7 +114,7 @@ export default function StatsSection() {
           {/* Metric 1 */}
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
             <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Active Users</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
+            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
               {stats.activeInstalls.toLocaleString()}
             </span>
           </div>
@@ -122,7 +122,7 @@ export default function StatsSection() {
           {/* Metric 2 */}
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
             <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Downloads</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
+            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
               {stats.totalInstalls.toLocaleString()}
             </span>
           </div>
@@ -130,7 +130,7 @@ export default function StatsSection() {
           {/* Metric 3 */}
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
             <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Retention</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
+            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
               {stats.retentionRate}%
             </span>
           </div>
@@ -138,7 +138,7 @@ export default function StatsSection() {
           {/* Metric 4 */}
           <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
             <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Top Region</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "#fff", letterSpacing: "-0.03em", lineHeight: 1 }}>
+            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
               {stats.regions[0]?.name || "N/A"}
             </span>
           </div>

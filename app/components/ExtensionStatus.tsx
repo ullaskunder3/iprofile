@@ -10,7 +10,7 @@ export default function ExtensionStatus() {
       style={{
         width: "100%",
         padding: "var(--space-md)",
-        background: "rgba(255, 255, 255, 0.03)",
+        background: "rgba(0, 0, 0, 0.02)",
         border: "1px solid rgba(16, 185, 129, 0.2)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
@@ -47,7 +47,7 @@ export default function ExtensionStatus() {
             boxShadow: "0 0 10px rgba(16, 185, 129, 0.4)",
             display: "inline-block"
           }} />
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#34d399", letterSpacing: "0.02em", textTransform: "uppercase" }}>
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#059669", letterSpacing: "0.02em", textTransform: "uppercase" }}>
             Available Now
           </span>
         </div>
@@ -84,7 +84,7 @@ export default function ExtensionStatus() {
           padding: "0.5rem 1rem",
           borderRadius: "var(--radius-md)",
           background: "rgba(16, 185, 129, 0.1)",
-          color: "#34d399",
+          color: "#059669",
           fontSize: "0.75rem",
           fontWeight: 600,
           border: "1px solid rgba(16, 185, 129, 0.2)",

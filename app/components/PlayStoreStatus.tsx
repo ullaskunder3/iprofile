@@ -10,8 +10,8 @@ export default function PlayStoreStatus() {
       style={{
         width: "100%",
         padding: "var(--space-md)",
-        background: "rgba(255, 255, 255, 0.03)",
-        border: "1px solid rgba(255, 255, 255, 0.08)",
+        background: "rgba(0, 0, 0, 0.02)",
+        border: "1px solid var(--border)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
         position: "relative",
@@ -30,7 +30,7 @@ export default function PlayStoreStatus() {
           right: "-10%",
           width: "120px",
           height: "120px",
-          background: "#ffffff",
+          background: "#000000",
           filter: "blur(50px)",
           opacity: 0.04,
           zIndex: 0,
@@ -44,7 +44,7 @@ export default function PlayStoreStatus() {
             height: "8px", 
             borderRadius: "50%", 
             background: "var(--success)", 
-            boxShadow: "0 0 10px rgba(255, 255, 255, 0.15)",
+            boxShadow: "0 0 10px rgba(0, 0, 0, 0.15)",
             display: "inline-block"
           }} />
           <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "var(--success)", letterSpacing: "0.02em", textTransform: "uppercase" }}>

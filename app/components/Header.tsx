@@ -18,7 +18,7 @@ export default function Header() {
         justifyContent: "space-between",
         backdropFilter: "blur(16px) saturate(1.4)",
         WebkitBackdropFilter: "blur(16px) saturate(1.4)",
-        background: "rgba(5, 5, 5, 0.8)",
+        background: "rgba(255, 255, 255, 0.8)",
         borderBottom: "1px solid var(--border)",
       }}
     >

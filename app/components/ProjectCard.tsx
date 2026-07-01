@@ -77,13 +77,13 @@ export default function ProjectCard({
             </span>
           </div>
 
-          <span className={status === "live" ? "badge badge--live" : status === "in-review" ? "badge" : "badge badge--coming-soon"} style={{ borderColor: status === "in-review" ? "rgba(139, 92, 246, 0.3)" : undefined, background: status === "in-review" ? "rgba(139, 92, 246, 0.1)" : undefined, color: status === "in-review" ? "#a78bfa" : undefined }}>
+          <span className={status === "live" ? "badge badge--live" : status === "in-review" ? "badge" : "badge badge--coming-soon"} style={{ borderColor: status === "in-review" ? "rgba(124, 58, 237, 0.3)" : undefined, background: status === "in-review" ? "rgba(124, 58, 237, 0.1)" : undefined, color: status === "in-review" ? "#7c3aed" : undefined }}>
             <span
               style={{
                 width: 6,
                 height: 6,
                 borderRadius: "50%",
-                background: status === "live" ? "var(--success)" : status === "in-review" ? "#8b5cf6" : "var(--warning)",
+                background: status === "live" ? "var(--success)" : status === "in-review" ? "#7c3aed" : "var(--warning)",
                 display: "inline-block",
                 animation: status === "live" ? undefined : "pulse 2s infinite",
               }}
@@ -138,7 +138,7 @@ export default function ProjectCard({
           lineHeight: 1.7,
           margin: 0,
           maxWidth: "65ch",
-          borderLeft: "2px solid rgba(255, 255, 255, 0.1)",
+          borderLeft: "2px solid rgba(0, 0, 0, 0.1)",
           paddingLeft: "var(--space-md)",
         }}
       >
