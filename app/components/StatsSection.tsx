@@ -41,10 +41,8 @@ export default function StatsSection() {
       <div style={{ 
         display: "flex", 
         flexDirection: "column", 
-        gap: "var(--space-xl)",
-        padding: "var(--space-xl) 0",
-        borderTop: "1px solid var(--border)",
-        borderBottom: "1px solid var(--border)",
+        gap: "var(--space-lg)",
+        padding: "var(--space-md) 0",
       }}>
         {/* Header for Trust */}
         <div style={{ 
@@ -103,45 +101,87 @@ export default function StatsSection() {
           </div>
         </div>
 
-        {/* Minimal Metrics Row (Flex to distribute space evenly and center align) */}
+        {/* Funnel Metrics Row */}
         <div style={{
-          display: "flex",
-          flexWrap: "wrap",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: "var(--space-lg)",
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+          gap: "var(--space-md)",
+          width: "100%",
         }}>
-          {/* Metric 1 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
-            <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Active Users</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-              {stats.activeInstalls.toLocaleString()}
-            </span>
-          </div>
+          {[
+            { label: "Impressions", value: stats.totalImpressions.toLocaleString(), desc: "Store Discovery" },
+            { label: "Page Views", value: stats.totalPageViews.toLocaleString(), desc: "Listing Visits" },
+            { label: "Conversion", value: `${stats.conversionRate}%`, desc: "View to Install" },
+            { label: "Downloads", value: stats.totalInstalls.toLocaleString(), desc: "Total Installs" }
+          ].map((metric, i) => (
+            <div key={`funnel-${i}`} style={{ 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "6px", 
+              padding: "var(--space-lg)",
+              background: "rgba(255, 255, 255, 0.02)",
+              border: "1px solid rgba(255, 255, 255, 0.05)",
+              borderRadius: "16px",
+              alignItems: "flex-start",
+              boxShadow: "inset 0 1px 0 rgba(255, 255, 255, 0.02)"
+            }}>
+              <span style={{ fontSize: "11px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                {metric.label}
+              </span>
+              <span style={{ fontSize: "32px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
+                {metric.value}
+              </span>
+              <span style={{ fontSize: "11px", color: "var(--text-muted)", marginTop: "auto", paddingTop: "8px" }}>
+                {metric.desc}
+              </span>
+            </div>
+          ))}
+        </div>
 
-          {/* Metric 2 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
-            <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Downloads</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-              {stats.totalInstalls.toLocaleString()}
-            </span>
-          </div>
-
-          {/* Metric 3 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
-            <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Retention</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-              {stats.retentionRate}%
-            </span>
-          </div>
-
-          {/* Metric 4 */}
-          <div style={{ display: "flex", flexDirection: "column", gap: "8px", alignItems: "center", flex: "1 1 auto" }}>
-            <span style={{ fontSize: "12px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>Top Region</span>
-            <span style={{ fontSize: "40px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
-              {stats.regions[0]?.name || "N/A"}
-            </span>
-          </div>
+        {/* Health Metrics Row */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
+          gap: "var(--space-md)",
+          width: "100%",
+        }}>
+          {[
+            { label: "Active Users", value: stats.activeInstalls.toLocaleString(), color: "#10b981", desc: "Currently Installed" },
+            { label: "Retention", value: `${stats.retentionRate}%`, color: "#3b82f6", desc: "Active / Total Downloads" },
+            { label: "Top Region", value: stats.regions[0]?.name || "N/A", color: "#8b5cf6", desc: "Largest Market" }
+          ].map((metric, i) => (
+            <div key={`health-${i}`} style={{ 
+              display: "flex", 
+              flexDirection: "column", 
+              gap: "6px", 
+              padding: "var(--space-lg)",
+              background: "linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%)",
+              border: "1px solid rgba(255, 255, 255, 0.08)",
+              borderRadius: "16px",
+              alignItems: "flex-start",
+              position: "relative",
+              overflow: "hidden"
+            }}>
+              <div style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                height: "3px",
+                background: metric.color,
+                opacity: 0.9
+              }} />
+              <span style={{ fontSize: "11px", color: "var(--text-secondary)", fontWeight: 600, textTransform: "uppercase", letterSpacing: "0.05em" }}>
+                {metric.label}
+              </span>
+              <span style={{ fontSize: "36px", fontWeight: 800, color: "var(--text-primary)", letterSpacing: "-0.03em", lineHeight: 1 }}>
+                {metric.value}
+              </span>
+              <span style={{ fontSize: "11px", color: "var(--text-muted)", marginTop: "auto", paddingTop: "8px" }}>
+                {metric.desc}
+              </span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
