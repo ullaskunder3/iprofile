@@ -55,7 +55,7 @@ export default function Hero() {
                 {siteData.subheadline}
               </p>
               
-              <div className="flex flex-wrap items-center gap-6">
+              <div className="flex flex-wrap items-center gap-4 md:gap-6">
                 <Link href="#projects" className="btn-primary">
                   Explore Projects
                 </Link>
