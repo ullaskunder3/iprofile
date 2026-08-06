@@ -15,6 +15,7 @@ interface ProjectCardProps {
   technologies: string[];
   details: string;
   index: number;
+  stats?: string;
 }
 
 export default function ProjectCard({
@@ -30,6 +31,7 @@ export default function ProjectCard({
   technologies,
   details,
   index,
+  stats,
 }: ProjectCardProps) {
   const delay = 300 + index * 150;
 
@@ -91,6 +93,31 @@ export default function ProjectCard({
             {status === "live" ? "Live" : status === "in-review" ? "In Review" : "Coming Soon"}
           </span>
         </div>
+
+        {stats && (
+          <div style={{ marginTop: "0.25rem", marginBottom: "0.25rem" }}>
+            <span
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.25rem",
+                padding: "0.25rem 0.75rem",
+                borderRadius: "9999px",
+                background: "var(--accent)",
+                color: "var(--bg-primary)",
+                fontSize: "var(--text-xs)",
+                fontWeight: 600,
+                letterSpacing: "0.02em",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              }}
+            >
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+              </svg>
+              {stats}
+            </span>
+          </div>
+        )}
 
         <h2
           className="gradient-text"

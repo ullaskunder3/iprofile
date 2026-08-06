@@ -68,6 +68,37 @@ export default function Hero() {
         </div>
       </section>
 
+      {/* ═══ PIN-TUBE LIVE STATS BANNER ═══ */}
+      <section className="w-full border-t-2 border-b-2 border-black bg-white text-black py-12 px-6 md:px-12">
+        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
+          <div className="flex flex-col">
+            <span className="font-mono text-sm tracking-widest uppercase text-gray-500 mb-2 border-l-2 border-black pl-2">Live Extension Stats</span>
+            <h2 className="font-display text-5xl md:text-6xl tracking-tighter uppercase mb-0 leading-none">
+              Pin-Tube
+            </h2>
+          </div>
+          
+          <div className="flex flex-wrap items-center gap-12 md:gap-24">
+            <div className="flex flex-col items-start">
+              <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter leading-none mb-2">
+                88
+              </span>
+              <span className="font-mono text-sm tracking-widest uppercase text-gray-500">
+                Active Users
+              </span>
+            </div>
+            <div className="flex flex-col items-start">
+              <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter leading-none mb-2 text-gray-400">
+                99
+              </span>
+              <span className="font-mono text-sm tracking-widest uppercase text-gray-400">
+                Total Installs
+              </span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ═══ INVERTED STATS SECTION ═══ */}
       <section className="w-full bg-black text-white py-24 px-6 md:px-12 relative overflow-hidden">
         {/* Inverted Vertical Line Texture */}
@@ -119,9 +150,16 @@ export default function Hero() {
               
               <div className="lg:col-span-4 flex flex-col justify-between border-2 border-black p-8 transition-colors duration-100 group-hover:bg-black group-hover:text-white">
                 <div>
-                  <span className="font-mono text-xs tracking-widest uppercase border border-current px-2 py-1 mb-8 inline-block">
-                    0{index + 1} // {project.technologies[0]}
-                  </span>
+                  <div className="flex flex-wrap items-center gap-2 mb-8">
+                    <span className="font-mono text-xs tracking-widest uppercase border border-current px-2 py-1 inline-block">
+                      0{index + 1} // {project.technologies[0]}
+                    </span>
+                    {(project as any).stats && (
+                      <span className="font-mono text-xs tracking-widest uppercase bg-black text-white px-2 py-1 inline-block border border-black group-hover:bg-white group-hover:text-black transition-colors duration-100">
+                        {(project as any).stats}
+                      </span>
+                    )}
+                  </div>
                   <h3 className="font-display text-4xl md:text-5xl tracking-tighter uppercase mt-4 mb-6">{project.title}</h3>
                   <p className="font-serif text-lg leading-relaxed line-clamp-3">
                     {project.description}
