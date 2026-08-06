@@ -2,8 +2,7 @@ import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import siteData from "../data/site.json";
-import ExtensionStatus from "./ExtensionStatus";
-import StatsSection from "./StatsSection";
+import projectsData from "../data/projects.json";
 
 export default function Hero() {
   const journals = [
@@ -24,434 +23,152 @@ export default function Hero() {
   ];
 
   return (
-    <>
-      {/* ═══ HERO — Company Identity ═══ */}
-      <section
-        style={{
-          position: "relative",
-          display: "flex",
-          flexDirection: "column",
-          alignItems: "center",
-          justifyContent: "center",
-          textAlign: "center",
-          minHeight: "60vh",
-          padding: "var(--space-3xl) var(--space-xl) var(--space-2xl)",
-        }}
-      >
-        {/* Decorative glow orbs */}
-        <div
-          className="glow-orb"
-          style={{
-            width: 420,
-            height: 420,
-            background: "#ffffff",
-            top: "-10%",
-            left: "-8%",
-          }}
-        />
-        <div
-          className="glow-orb"
-          style={{
-            width: 300,
-            height: 300,
-            background: "#666666",
-            bottom: "5%",
-            right: "-5%",
-            animationDelay: "3s",
-          }}
-        />
-        <div
-          className="glow-orb"
-          style={{
-            width: 200,
-            height: 200,
-            background: "#444444",
-            top: "40%",
-            right: "20%",
-            animationDelay: "6s",
-            opacity: 0.12,
-          }}
-        />
+    <div className="w-full bg-white text-black font-serif relative">
+      <div className="texture-noise" />
+      <div className="texture-lines" />
 
-        <div
-          style={{
-            position: "relative",
-            zIndex: 1,
-            maxWidth: "52rem",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "var(--space-lg)",
-          }}
-        >
-          {/* Announcement pill */}
-          <Link
-            href="/kanade"
-            className="animate-in delay-100 group hover:border-black/20 hover:bg-black/5 transition-all"
-            style={{
-              display: "inline-flex",
-              alignItems: "center",
-              gap: "0.6rem",
-              padding: "0.3rem 0.8rem 0.3rem 0.3rem",
-              borderRadius: "var(--radius-full)",
-              background: "rgba(0, 0, 0, 0.04)",
-              border: "1px solid rgba(0, 0, 0, 0.1)",
-              fontSize: "var(--text-xs)",
-              color: "var(--text-secondary)",
-              fontWeight: 500,
-              textDecoration: "none",
-            }}
-          >
-            <span style={{ 
-              background: "var(--accent)", 
-              color: "#ffffff",
-              padding: "0.2rem 0.6rem",
-              borderRadius: "var(--radius-full)",
-              fontSize: "0.65rem",
-              fontWeight: 800,
-              textTransform: "uppercase",
-              letterSpacing: "0.05em"
-            }}>New Release</span>
-            <span className="text-black/80 group-hover:text-black transition-colors">Kanade — AI Duet Synthesizer</span>
-            <svg 
-              className="transition-transform group-hover:translate-x-1 text-black/50 group-hover:text-black" 
-              width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"
-            >
-              <line x1="5" y1="12" x2="19" y2="12"></line>
-              <polyline points="12 5 19 12 12 19"></polyline>
-            </svg>
-          </Link>
+      {/* ═══ MINIMALIST MONOCHROME HERO ═══ */}
+      <section className="relative w-full min-h-[90vh] flex flex-col pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto z-10">
+        
+        {/* Decorative Element: Thick rule with small bordered square */}
+        <div className="w-full flex items-center gap-4 mb-16">
+          <div className="h-1 w-full bg-black"></div>
+          <div className="w-4 h-4 border-2 border-black flex-shrink-0"></div>
+        </div>
 
-          {/* Headline */}
-          <h1
-            className="animate-in delay-200"
-            style={{
-              fontSize: "clamp(var(--text-2xl), 6vw, var(--text-4xl))",
-              fontWeight: 800,
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-              margin: 0,
-              color: "var(--text-primary)",
-            }}
-          >
-            {siteData.headline.split("\n").map((line, i) => (
-              <React.Fragment key={i}>
-                {i === 1 ? <span className="gradient-text">{line}</span> : line}
-                {i === 0 && <br />}
-              </React.Fragment>
-            ))}
+        <div className="flex-1 flex flex-col justify-center">
+          {/* Oversized Typography */}
+          <h1 className="font-display leading-[0.85] tracking-tighter uppercase mb-12 w-full">
+            <div className="text-[clamp(2rem,6.5vw,5rem)] mb-2 md:mb-4">Simple software,</div>
+            <div className="text-[clamp(2.5rem,11vw,9rem)]">Thoughtfully</div>
+            <div className="text-[clamp(2.5rem,11vw,9rem)]">Crafted.</div>
           </h1>
 
-          {/* Subheadline */}
-          <p
-            className="animate-in delay-300"
-            style={{
-              fontSize: "var(--text-md)",
-              color: "var(--text-secondary)",
-              lineHeight: 1.7,
-              maxWidth: "42rem",
-              margin: 0,
-              textWrap: "balance",
-            }}
-          >
-            {siteData.subheadline}
-          </p>
-
-          {/* CTA Buttons */}
-          <div
-            className="animate-in delay-400"
-            style={{
-              display: "flex",
-              gap: "var(--space-md)",
-              flexWrap: "wrap",
-              justifyContent: "center",
-            }}
-          >
-            <a href="#featured" className="btn-primary">
-              See What&apos;s New
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <polyline points="19 12 12 19 5 12" />
-              </svg>
-            </a>
-            <a
-              href={siteData.ctaUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-outline"
-            >
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.44 9.8 8.2 11.38.6.11.82-.26.82-.58v-2.03c-3.34.73-4.04-1.61-4.04-1.61-.55-1.39-1.34-1.76-1.34-1.76-1.09-.75.08-.73.08-.73 1.2.08 1.84 1.24 1.84 1.24 1.07 1.84 2.81 1.31 3.5 1 .11-.78.42-1.31.76-1.61-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.13-.3-.54-1.52.12-3.18 0 0 1-.32 3.3 1.23a11.5 11.5 0 0 1 6.02 0c2.28-1.55 3.29-1.23 3.29-1.23.66 1.66.25 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.63-5.48 5.92.43.37.81 1.1.81 2.22v3.29c0 .32.21.7.82.58A12.01 12.01 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
-              </svg>
-              {siteData.ctaText}
-            </a>
-          </div>
-
-          <div style={{ 
-            display: "flex", 
-            flexDirection: "column", 
-            gap: "var(--space-sm)", 
-            width: "100%", 
-            maxWidth: "32rem", 
-            marginTop: "var(--space-xl)" 
-          }}>
-            <ExtensionStatus />
+          <div className="grid grid-cols-1 md:grid-cols-[1fr_1.618fr] gap-12 border-t-2 border-black pt-8">
+            <div className="flex items-start">
+              <span className="font-mono text-sm uppercase tracking-widest border border-black px-2 py-1">
+                Portfolio 2026
+              </span>
+            </div>
+            <div className="flex flex-col items-start gap-10">
+              <p className="text-xl md:text-2xl leading-relaxed max-w-2xl font-serif text-pretty">
+                {siteData.subheadline}
+              </p>
+              
+              <div className="flex flex-wrap items-center gap-6">
+                <Link href="#projects" className="btn-primary">
+                  Explore Projects
+                </Link>
+                <Link href="https://github.com/ullaskunder3" className="btn-outline">
+                  View on GitHub
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <div className="animate-in delay-500" style={{
-        display: "flex",
-        gap: "var(--space-md)",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        marginTop: "var(--space-xl)",
-        marginBottom: "var(--space-lg)"
-      }}>
-        <Link href="/pin-tube" className="btn-outline" style={{ padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}>Pin-Tube</Link>
-        <Link href="/phys-daily" className="btn-outline" style={{ padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}>PhysDaily</Link>
-        <Link href="/kanade" className="btn-outline" style={{ padding: "0.5rem 1.25rem", fontSize: "var(--text-xs)" }}>Kanade</Link>
-      </div>
+      {/* ═══ INVERTED STATS SECTION ═══ */}
+      <section className="w-full bg-black text-white py-24 px-6 md:px-12 relative overflow-hidden">
+        {/* Inverted Vertical Line Texture */}
+        <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
+          backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 1px, #fff 1px, #fff 2px)",
+          backgroundSize: "4px 100%"
+        }}></div>
 
-      <StatsSection />
-
-      {/* ═══ FEATURED WRITING — Blog Section (Compact Grid) ═══ */}
-      <section className="max-w-6xl mx-auto px-4 md:px-12 mb-20 md:mb-28">
-        <div className="flex flex-col gap-6">
-          {/* Label */}
-          <div className="flex items-center gap-3">
-            <span className="text-[10px] uppercase font-black tracking-[0.2em] text-accent-secondary">
-              Journal
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 z-10 relative border-t-4 border-white pt-12">
+          <div className="flex flex-col gap-2 min-w-0">
+            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Total Installs</span>
+            <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter truncate">10,000+</span>
+          </div>
+          <div className="flex flex-col gap-2 min-w-0">
+            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Open Source</span>
+            <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter truncate">100%</span>
+          </div>
+          <div className="flex flex-col gap-2 min-w-0">
+            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Approach</span>
+            <span className="font-display text-[clamp(2.5rem,4vw,3.5rem)] tracking-tighter uppercase leading-[1.1] break-words">
+              Language<br/>Agnostic
             </span>
-            <div className="h-[1px] flex-1 bg-black/10" />
+          </div>
+        </div>
+      </section>
+
+      {/* ═══ PROJECTS HIGHLIGHT ═══ */}
+      <section id="projects" className="w-full py-32 px-6 md:px-12 max-w-7xl mx-auto bg-white">
+        <div className="w-full border-t-4 border-black mb-16 pt-4 flex justify-between items-end">
+          <h2 className="font-display text-5xl md:text-7xl tracking-tighter uppercase">Selected Works</h2>
+          <span className="font-mono text-sm tracking-widest uppercase hidden md:block border-b-2 border-black pb-1">01 / 04</span>
+        </div>
+
+        <div className="flex flex-col gap-12">
+          {projectsData.filter(p => ["kanade", "pin-tube", "phys-daily"].includes(p.id)).map((project, index) => (
+            <Link 
+              key={project.id}
+              href={`/${project.id}`}
+              className="grid grid-cols-1 lg:grid-cols-12 gap-0 lg:gap-12 items-stretch group cursor-pointer"
+            >
+              <div className="lg:col-span-8 border-2 border-black p-2 bg-white transition-colors duration-100 group-hover:bg-black overflow-hidden relative aspect-[4/3] md:aspect-video mb-4 lg:mb-0">
+                <Image 
+                  src={project.gallery && project.gallery.length > 0 ? project.gallery[0].src : "/img/placeholder.png"}
+                  alt={`${project.title} Preview`}
+                  fill
+                  className="object-cover grayscale transition-all duration-300 group-hover:scale-105 group-hover:grayscale-0"
+                />
+              </div>
+              
+              <div className="lg:col-span-4 flex flex-col justify-between border-2 border-black p-8 transition-colors duration-100 group-hover:bg-black group-hover:text-white">
+                <div>
+                  <span className="font-mono text-xs tracking-widest uppercase border border-current px-2 py-1 mb-8 inline-block">
+                    0{index + 1} // {project.technologies[0]}
+                  </span>
+                  <h3 className="font-display text-4xl md:text-5xl tracking-tighter uppercase mt-4 mb-6">{project.title}</h3>
+                  <p className="font-serif text-lg leading-relaxed line-clamp-3">
+                    {project.description}
+                  </p>
+                </div>
+                
+                <div className="mt-12 font-mono text-sm uppercase tracking-widest flex items-center justify-between border-t border-current pt-4">
+                  <span>View Project</span>
+                  <span className="text-xl group-hover:translate-x-2 transition-transform duration-100">→</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      {/* ═══ JOURNAL ═══ */}
+      <section className="w-full py-32 px-6 md:px-12 bg-white border-t-8 border-black">
+        <div className="max-w-7xl mx-auto">
+          <div className="w-full border-b-2 border-black pb-4 mb-16 flex justify-between items-end">
+            <h2 className="font-display text-5xl tracking-tighter uppercase">Journal</h2>
+            <Link href="/blogs" className="font-mono text-sm tracking-widest uppercase hover:underline">All Entries →</Link>
           </div>
 
-          <div style={{
-            display: "grid",
-            gap: "var(--space-xl)",
-            gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))"
-          }}>
-            {journals.map((post, idx) => (
-              <a
-                key={idx}
-                href={post.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-                style={{ textDecoration: "none" }}
+          <div className="grid grid-cols-1 gap-0">
+            {journals.map((journal, i) => (
+              <Link 
+                key={i}
+                href={journal.url}
+                className="group flex flex-col md:flex-row gap-8 md:gap-16 items-start md:items-center py-12 border-b-2 border-black hover:bg-black hover:text-white transition-colors duration-100 px-4 md:px-8 -mx-4 md:-mx-8"
               >
-                <div style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  height: "100%",
-                  gap: "var(--space-md)",
-                  transition: "all var(--transition-base)"
-                }}>
-                  {/* Thumbnail Container */}
-                  <div style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "180px",
-                    background: post.imageUrl.includes("pin-tube") ? "#0a0a0a" : "#ffffff",
-                    borderRadius: "var(--radius-md)",
-                    overflow: "hidden",
-                    border: "1px solid var(--border)"
-                  }}>
-                    <Image
-                      src={post.imageUrl}
-                      alt={post.title}
-                      fill
-                      className="object-contain p-4 transition-transform duration-500 group-hover:scale-[1.02]"
-                    />
-                  </div>
-
-                  {/* Content */}
-                  <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-xs)", flex: 1 }}>
-                    <span style={{ fontSize: "10px", fontFamily: "var(--font-mono, monospace)", color: "var(--text-muted)" }}>
-                      {post.date}
-                    </span>
-                    <h3 style={{
-                      fontSize: "var(--text-base)",
-                      fontWeight: 800,
-                      color: "var(--text-primary)",
-                      margin: 0,
-                      lineHeight: 1.3,
-                      transition: "color var(--transition-fast)"
-                    }} className="group-hover:text-accent-secondary">
-                      {post.title}
-                    </h3>
-                    <p style={{
-                      fontSize: "var(--text-xs)",
-                      color: "var(--text-secondary)",
-                      margin: 0,
-                      lineHeight: 1.5,
-                      flex: 1
-                    }}>
-                      {post.description}
-                    </p>
-                    
-                    <div style={{
-                      display: "flex",
-                      alignItems: "center",
-                      gap: "4px",
-                      fontSize: "11px",
-                      fontWeight: 700,
-                      color: "var(--text-secondary)",
-                      marginTop: "var(--space-xs)",
-                      transition: "color var(--transition-fast)"
-                    }} className="group-hover:text-black">
-                      Read Article
-                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" className="transition-transform group-hover:translate-x-1">
-                        <line x1="5" y1="12" x2="19" y2="12"></line>
-                        <polyline points="12 5 19 12 12 19"></polyline>
-                      </svg>
-                    </div>
-                  </div>
+                <div className="font-mono text-sm tracking-widest uppercase w-32 shrink-0">
+                  {journal.date}
                 </div>
-              </a>
+                
+                <h3 className="font-display text-3xl md:text-4xl tracking-tighter leading-tight flex-1">
+                  {journal.title}
+                </h3>
+                
+                <div className="font-mono text-2xl group-hover:translate-x-4 transition-transform duration-100">
+                  →
+                </div>
+              </Link>
             ))}
           </div>
         </div>
       </section>
-      {/* ═══ FEATURED PRODUCTS GRID ═══ */}
-      <section id="featured" className="max-w-6xl mx-auto px-4 md:px-12 mb-20 md:mb-28">
-        <div style={{
-          display: "grid",
-          gap: "var(--space-lg)",
-          gridTemplateColumns: "repeat(auto-fit, minmax(340px, 1fr))",
-        }}>
-          {/* Card 1: PhysDaily */}
-          <Link href="/phys-daily" className="block group" style={{ textDecoration: "none" }}>
-            <div className="glass" style={{
-              display: "flex",
-              flexDirection: "column",
-              height: "100%",
-              borderRadius: "var(--radius-lg)",
-              overflow: "hidden",
-              border: "1px solid var(--border)",
-              transition: "all var(--transition-base)",
-            }}>
-              {/* Image Container */}
-              <div style={{
-                position: "relative",
-                width: "100%",
-                height: "220px",
-                background: "rgba(0, 0, 0, 0.02)",
-                borderBottom: "1px solid var(--border)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden"
-              }}>
-                <div style={{
-                  position: "relative",
-                  width: "90%",
-                  height: "140%",
-                  top: "10%",
-                  transition: "transform 0.5s ease"
-                }} className="group-hover:scale-[1.03]">
-                  <Image
-                    src="/img/phys-daily/feature-product.png"
-                    alt="PhysDaily app screens"
-                    fill
-                    className="object-contain drop-shadow-[0_15px_30px_rgba(0,0,0,0.5)]"
-                  />
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div style={{ padding: "var(--space-md)", display: "flex", flexDirection: "column", gap: "var(--space-sm)", flex: 1 }}>
-                <span style={{ fontSize: "10px", textTransform: "uppercase", fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
-                  Featured Experience
-                </span>
-                <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
-                  PhysDaily — <span className="gradient-text">The Physics Bowl</span>
-                </h3>
-                <p style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)", margin: 0, flex: 1, lineHeight: 1.5 }}>
-                  Reimagining physics education through daily gamified challenges and real-time interactive problem sets.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "var(--space-xs)" }}>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>Flutter</span>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>Firebase</span>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>Dart</span>
-                </div>
-              </div>
-            </div>
-          </Link>
-
-          {/* Card 2: Kanade */}
-          <Link href="/kanade" className="block group" style={{ textDecoration: "none" }}>
-            <div className="glass" style={{
-              display: "flex",
-              flexDirection: "column",
-              height: "100%",
-              borderRadius: "var(--radius-lg)",
-              overflow: "hidden",
-              border: "1px solid var(--border)",
-              transition: "all var(--transition-base)",
-            }}>
-              {/* Image Container */}
-              <div style={{
-                position: "relative",
-                width: "100%",
-                height: "220px",
-                background: "rgba(0, 0, 0, 0.02)",
-                borderBottom: "1px solid var(--border)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                overflow: "hidden"
-              }}>
-                <div style={{
-                  position: "relative",
-                  width: "88%",
-                  height: "88%",
-                  borderRadius: "var(--radius-sm)",
-                  overflow: "hidden",
-                  border: "1px solid var(--border)",
-                  boxShadow: "var(--shadow-card)",
-                  transition: "transform 0.5s ease"
-                }} className="group-hover:scale-[1.03]">
-                  <Image
-                    src="/img/kanade/desktop_view.png"
-                    alt="Kanade AI Composer interface"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-              </div>
-              
-              {/* Content */}
-              <div style={{ padding: "var(--space-md)", display: "flex", flexDirection: "column", gap: "var(--space-sm)", flex: 1 }}>
-                <span style={{ fontSize: "10px", textTransform: "uppercase", fontWeight: 900, letterSpacing: "0.2em", color: "var(--text-secondary)" }}>
-                  New Release
-                </span>
-                <h3 style={{ fontSize: "var(--text-base)", fontWeight: 800, color: "var(--text-primary)", margin: 0 }}>
-                  Kanade — <span className="gradient-text">AI Composer</span>
-                </h3>
-                <p style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)", margin: 0, flex: 1, lineHeight: 1.5 }}>
-                  A zero-frustration synthesizer and AI composer where every keypress resolves to beautiful harmony.
-                </p>
-                <div style={{ display: "flex", flexWrap: "wrap", gap: "6px", marginTop: "var(--space-xs)" }}>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>Next.js</span>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>Web Audio API</span>
-                  <span className="pill" style={{ fontSize: "9px", padding: "2px 6px" }}>TypeScript</span>
-                </div>
-              </div>
-            </div>
-          </Link>
-        </div>
-      </section>
-    </>
+    </div>
   );
 }
-

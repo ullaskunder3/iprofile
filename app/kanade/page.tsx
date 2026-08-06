@@ -13,368 +13,137 @@ export const metadata = {
 
 export default function KanadeLanding() {
   return (
-    <>
-      <div className="noise-overlay" />
+    <div className="bg-white text-black min-h-screen font-sans">
       <Header />
 
-      <main
-        className="animate-in"
-        id="main-content"
-        style={{ paddingTop: "var(--space-3xl)", overflow: "hidden" }}
-      >
+      <main id="main-content" className="pt-24 pb-16 px-4 md:px-8 max-w-7xl mx-auto">
         {/* --- HERO SECTION --- */}
-        <section
-          style={{
-            maxWidth: "64rem",
-            margin: "0 auto",
-            padding: "var(--space-xl) var(--space-md)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            gap: "var(--space-lg)",
-          }}
-        >
-          <div className="badge" style={{ marginBottom: "var(--space-xs)", borderColor: "rgba(255, 255, 255, 0.15)", background: "rgba(255, 255, 255, 0.05)", color: "var(--text-primary)" }}>
-            <span
-              style={{
-                width: 6,
-                height: 6,
-                borderRadius: "50%",
-                background: "#ffffff",
-                display: "inline-block",
-                boxShadow: "0 0 10px rgba(255, 255, 255, 0.8)",
-                animation: "pulse 2s infinite"
-              }}
-            />
-            <span style={{ fontWeight: 600 }}>Free Demo — No Registration Required</span>
+        <section className="flex flex-col items-center text-center gap-8 mb-24 border-b border-black pb-24">
+          <div className="text-xs font-bold uppercase tracking-widest border border-black px-4 py-2">
+            Free Demo — No Registration Required
           </div>
 
-          <div
-            style={{
-              width: 96,
-              height: 96,
-              borderRadius: 24,
-              background: "linear-gradient(135deg, #111111 0%, #333333 100%)",
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.4)",
-              marginBottom: "var(--space-xs)",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-              border: "1px solid rgba(255, 255, 255, 0.1)"
-            }}
-          >
-            <span style={{ fontSize: "3rem" }}>🎹</span>
+          <div className="w-24 h-24 flex items-center justify-center border border-black mb-4">
+            <span className="text-4xl">🎹</span>
           </div>
 
-          <h1
-            style={{
-              fontSize: "clamp(1.75rem, 7vw, 3.25rem)",
-              fontWeight: 800,
-              color: "var(--text-primary)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-              margin: 0,
-            }}
-          >
+          <h1 className="text-5xl md:text-7xl font-serif font-bold leading-tight tracking-tight">
             Kanade.
             <br />
-            <span className="gradient-text">Music with no wrong notes.</span>
+            Music with no wrong notes.
           </h1>
 
-          <p
-            style={{
-              fontSize: "clamp(0.95rem, 2.5vw, 1.15rem)",
-              color: "var(--text-secondary)",
-              maxWidth: "55ch",
-              margin: "0 auto",
-              lineHeight: 1.6,
-              textWrap: "balance",
-            }}
-          >
+          <p className="text-lg md:text-xl max-w-2xl mx-auto leading-relaxed">
             A highly specialized web synthesizer and AI duet composer. 
             By mapping keys dynamically to curated cultural scales like Hirajōshi, Kanade guarantees perfect harmony with every keystroke while generating structured melodic responses.
           </p>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "var(--space-sm)",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              marginTop: "var(--space-md)",
-            }}
-          >
+          <div className="mt-8 flex flex-col items-center gap-4">
             <a
               href="http://kanade.xforbes.com/"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-primary"
-              style={{ padding: "0.875rem 1.75rem", fontSize: "1rem" }}
+              className="bg-black text-white px-8 py-4 text-lg font-medium hover:bg-gray-800 transition-colors"
             >
               Try Live Demo
             </a>
-            <span style={{ fontSize: "var(--text-xs)", color: "var(--text-secondary)", marginTop: "var(--space-xs)", width: "100%", display: "block" }}>
+            <span className="text-sm font-medium uppercase tracking-wider">
               Free to play. No signups or logins required. 🎹
             </span>
           </div>
         </section>
 
         {/* --- WIDE HERO BANNER --- */}
-        <section
-          style={{
-            maxWidth: "96rem",
-            margin: "var(--space-2xl) auto",
-            padding: "0 var(--space-md)",
-          }}
-        >
-          <div
-            className="glass"
-            style={{
-              position: "relative",
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
-              border: "1px solid rgba(255, 255, 255, 0.05)"
-            }}
-          >
-            <ZoomableImage
-              src="/img/kanade/desktop_view.png"
-              alt="Kanade Desktop Synthesizer Interface"
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "20%",
-                background:
-                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 100%)",
-                pointerEvents: "none",
-                zIndex: 2,
-              }}
-            />
-          </div>
+        <section className="mb-24 border border-black p-1">
+          <ZoomableImage
+            src="/img/kanade/desktop_view.png"
+            alt="Kanade Desktop Synthesizer Interface"
+          />
         </section>
 
         {/* --- THE PROBLEM & PLAN --- */}
-        <section
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-3xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(350px, 1fr))",
-            gap: "var(--space-xl)",
-          }}
-        >
-          <div
-            className="glass"
-            style={{
-              padding: "var(--space-xl)",
-              borderRadius: "var(--radius-xl)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-sm)",
-            }}
-          >
-             <h3 style={{ fontSize: "1.25rem", color: "var(--accent)", margin: 0 }}>The Frustration</h3>
-             <p style={{ color: "var(--text-secondary)", lineHeight: 1.6 }}>
-                <strong>Choice Paralysis & Discord:</strong> Confusing 88-key layouts make it hard for beginners to improvise, often resulting in dissonant, painful chords.<br/><br/>
-                <strong>Wandering AI Music:</strong> Standard neural music generators often produce unstructured, wandering melodies without coherent motifs.<br/><br/>
-                <strong>Heavy Downloads & Servers:</strong> Most web synths rely on downloading massive sound libraries (gigabytes of samples) or slow cloud processing.
-             </p>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 border-b border-black pb-24">
+          <div className="flex flex-col gap-6">
+            <h3 className="text-2xl font-serif font-bold uppercase tracking-widest border-b border-black pb-2">The Frustration</h3>
+            <p className="text-lg leading-relaxed">
+              <strong>Choice Paralysis & Discord:</strong> Confusing 88-key layouts make it hard for beginners to improvise, often resulting in dissonant, painful chords.<br/><br/>
+              <strong>Wandering AI Music:</strong> Standard neural music generators often produce unstructured, wandering melodies without coherent motifs.<br/><br/>
+              <strong>Heavy Downloads & Servers:</strong> Most web synths rely on downloading massive sound libraries (gigabytes of samples) or slow cloud processing.
+            </p>
           </div>
           
-          <div
-            className="glass"
-            style={{
-              padding: "var(--space-xl)",
-              borderRadius: "var(--radius-xl)",
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-sm)",
-            }}
-          >
-             <h3 style={{ fontSize: "1.25rem", color: "var(--accent)", margin: 0 }}>The Plan</h3>
-             <ul style={{ color: "var(--text-secondary)", lineHeight: 1.6, margin: 0, paddingLeft: "1.5rem" }}>
-                <li>Lock the keyboard dynamically to beautiful scales (Major Pentatonic, Hirajōshi, Diatonic) so **every mash sounds amazing**.</li>
-                <li>Design a **First-Order Markov Chain** composer trained on folk melodies to structure 4-bar response loops.</li>
-                <li>Synthesize sound waves using **native Web Audio API** node graphs, pitch-shifting it to 432 Hz.</li>
-                <li>Export WAV files directly via the browser, and bit-pack notes into **Base64 URL parameters** for database-free sharing.</li>
-             </ul>
+          <div className="flex flex-col gap-6">
+            <h3 className="text-2xl font-serif font-bold uppercase tracking-widest border-b border-black pb-2">The Plan</h3>
+            <ul className="text-lg leading-relaxed list-disc pl-6 space-y-4">
+              <li>Lock the keyboard dynamically to beautiful scales (Major Pentatonic, Hirajōshi, Diatonic) so <strong>every mash sounds amazing</strong>.</li>
+              <li>Design a <strong>First-Order Markov Chain</strong> composer trained on folk melodies to structure 4-bar response loops.</li>
+              <li>Synthesize sound waves using <strong>native Web Audio API</strong> node graphs, pitch-shifting it to 432 Hz.</li>
+              <li>Export WAV files directly via the browser, and bit-pack notes into <strong>Base64 URL parameters</strong> for database-free sharing.</li>
+            </ul>
           </div>
         </section>
 
         {/* --- FEATURE HIGHLIGHT 1 --- */}
-        <section
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-4xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
-            gap: "var(--space-2xl)",
-            alignItems: "center",
-          }}
-        >
-          <div
-            className="glass"
-            style={{
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-card)",
-              border: "1px solid rgba(255, 255, 255, 0.05)"
-            }}
-          >
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 border-b border-black pb-24">
+          <div className="border border-black p-1 order-2 md:order-1">
             <ZoomableImage
               src="/img/kanade/tablet_view.png"
               alt="Zero-Frustration Scale Mapping and Synthesizer Settings"
             />
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-              padding: "0 var(--space-md)",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: 0,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-            >
-              Zero-Frustration
-              <br />
-              Scale Mapping
-            </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                textWrap: "balance",
-                lineHeight: 1.7,
-              }}
-            >
-              Kanade dynamically binds your physical keyboard keys to curated, chord-safe musical scales. Switch from standard Diatonic to the bright Major Pentatonic or the traditional Japanese Hirajōshi scale. With wrong notes mathematically excluded, you can focus on rhythm and flow.
-            </p>
+          <div className="flex flex-col gap-8 order-1 md:order-2">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">
+                Zero-Frustration
+                <br />
+                Scale Mapping
+              </h2>
+              <p className="text-lg leading-relaxed">
+                Kanade dynamically binds your physical keyboard keys to curated, chord-safe musical scales. Switch from standard Diatonic to the bright Major Pentatonic or the traditional Japanese Hirajōshi scale. With wrong notes mathematically excluded, you can focus on rhythm and flow.
+              </p>
+            </div>
             
-            <h2
-              style={{
-                fontSize: "clamp(1.5rem, 4vw, 2rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: "var(--space-xl) 0 0",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Bilingual Markov Composer
-            </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                textWrap: "balance",
-                lineHeight: 1.7,
-              }}
-            >
-              We trained a structured Markov Chain algorithm on real-world folk motifs. When you swap scales, the AI composer swaps its musical corpus—matching Western themes on Major keys, and swapping to traditional Koto folk patterns when using Japanese scales.
-            </p>
+            <hr className="border-black" />
+
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">
+                Bilingual Markov Composer
+              </h2>
+              <p className="text-lg leading-relaxed">
+                We trained a structured Markov Chain algorithm on real-world folk motifs. When you swap scales, the AI composer swaps its musical corpus—matching Western themes on Major keys, and swapping to traditional Koto folk patterns when using Japanese scales.
+              </p>
+            </div>
           </div>
         </section>
 
         {/* --- FEATURE HIGHLIGHT 2 --- */}
-        <section
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-4xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
-            gap: "var(--space-2xl)",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-              padding: "0 var(--space-md)",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: 0,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-            >
-              Real-Time AI Duet
-              <br />
-              Jam Accompaniment
-            </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                lineHeight: 1.7,
-                textWrap: "balance",
-              }}
-            >
-              Enable AI Duet mode and play standard melodies. When you stop, the AI composer intercepts the last note, analyzes your tempo, and instantly generates a structured 4-bar phrase response in real-time, functioning as an active collaborative partner.
-            </p>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center mb-24 border-b border-black pb-24">
+          <div className="flex flex-col gap-8">
+            <div>
+              <h2 className="text-3xl md:text-5xl font-serif font-bold leading-tight mb-6">
+                Real-Time AI Duet
+                <br />
+                Jam Accompaniment
+              </h2>
+              <p className="text-lg leading-relaxed">
+                Enable AI Duet mode and play standard melodies. When you stop, the AI composer intercepts the last note, analyzes your tempo, and instantly generates a structured 4-bar phrase response in real-time, functioning as an active collaborative partner.
+              </p>
+            </div>
 
-            <h2
-              style={{
-                fontSize: "clamp(1.5rem, 4vw, 2rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: "var(--space-xl) 0 0",
-                letterSpacing: "-0.01em",
-              }}
-            >
-              Web Audio Synthesis &amp; Warm Tuning
-            </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                lineHeight: 1.7,
-                textWrap: "balance",
-              }}
-            >
-              No large sample libraries to download. Kanade constructs its audio graph (oscillators, biquad filters, dynamic gains) directly using the browser's Web Audio API. Instrument profiles simulate the resonant tones of a Marimba, Chimes, and a plucked Japanese Shamisen—all mathematically tuned to the warm 432 Hz healing frequency.
-            </p>
+            <hr className="border-black" />
+
+            <div>
+              <h2 className="text-3xl md:text-4xl font-serif font-bold leading-tight mb-6">
+                Web Audio Synthesis & Warm Tuning
+              </h2>
+              <p className="text-lg leading-relaxed">
+                No large sample libraries to download. Kanade constructs its audio graph (oscillators, biquad filters, dynamic gains) directly using the browser's Web Audio API. Instrument profiles simulate the resonant tones of a Marimba, Chimes, and a plucked Japanese Shamisen—all mathematically tuned to the warm 432 Hz healing frequency.
+              </p>
+            </div>
           </div>
 
-          <div
-            className="glass"
-            style={{
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-card)",
-              border: "1px solid rgba(255, 255, 255, 0.05)"
-            }}
-          >
+          <div className="border border-black p-1">
             <ZoomableImage
               src="/img/kanade/mobile_view.png"
               alt="Kanade Mobile View showing AI composer options and custom synthesizer controls"
@@ -383,65 +152,27 @@ export default function KanadeLanding() {
         </section>
 
         {/* --- EXTRA FEATURES --- */}
-        <section
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-4xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(400px, 1fr))",
-            gap: "var(--space-2xl)",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-            }}
-          >
-             <h3 style={{ fontSize: "1.5rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Zero-Server WAV Exporter</h3>
-             <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.6, margin: 0 }}>
+        <section className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-24 pb-12 border-b border-black">
+          <div className="flex flex-col gap-4 border border-black p-8">
+             <h3 className="text-2xl font-serif font-bold uppercase tracking-widest border-b border-black pb-4">Zero-Server WAV Exporter</h3>
+             <p className="text-lg leading-relaxed pt-2">
                 Bake and render your compositions in milliseconds. By routing synthesized node data through an `OfflineAudioContext`, Kanade processes, writes PCM headers, and downloads a studio-quality `.WAV` file entirely within the client's browser, bypassing backend processing limits.
              </p>
           </div>
           
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-            }}
-          >
-             <h3 style={{ fontSize: "1.5rem", color: "var(--accent)", margin: "var(--space-sm) 0 0" }}>Ultra-Compact URL Sharing</h3>
-             <p style={{ color: "var(--text-secondary)", fontSize: "1.1rem", lineHeight: 1.6, margin: 0 }}>
+          <div className="flex flex-col gap-4 border border-black p-8">
+             <h3 className="text-2xl font-serif font-bold uppercase tracking-widest border-b border-black pb-4">Ultra-Compact URL Sharing</h3>
+             <p className="text-lg leading-relaxed pt-2">
                 Share your compositions without a database or server storage. Kanade packages notes, timestamps, scales, and velocities using custom binary bit-packing, serialized into a compact Base64 parameter appended to the URL. If someone clicks your link, their browser decodes and plays it instantly.
              </p>
           </div>
         </section>
 
         {/* --- LEGAL FINE PRINT --- */}
-        <div
-          style={{
-            marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "var(--space-xl)",
-            alignItems: "center",
-            marginTop: "var(--space-2xl)",
-          }}
-        >
+        <div className="flex justify-center pt-8">
           <Link
             href="/pin-tube/privacy"
-            style={{
-              fontSize: "0.85rem",
-              color: "var(--text-secondary)",
-              textDecoration: "none",
-              borderBottom: "1px solid transparent",
-              transition: "all 0.2s ease",
-              fontWeight: 500,
-            }}
-            className="hover:text-white"
+            className="text-sm font-bold uppercase tracking-widest hover:underline"
           >
             Privacy Policy
           </Link>
@@ -449,6 +180,6 @@ export default function KanadeLanding() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

@@ -14,57 +14,23 @@ export const metadata = {
 
 export default function PhysDailyLanding() {
   return (
-    <>
-      <div className="noise-overlay" />
+    <div className="bg-white text-black min-h-screen selection:bg-black selection:text-white">
       <Header />
 
-      <main
-        className="animate-in"
-        id="main-content"
-        style={{ paddingTop: "var(--space-3xl)", overflow: "hidden" }}
-      >
+      <main className="pt-24 md:pt-32 pb-16 overflow-hidden">
         {/* --- HERO SECTION --- */}
-        <section
-          style={{
-            maxWidth: "64rem",
-            margin: "0 auto",
-            padding: "var(--space-xl) var(--space-md)",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            textAlign: "center",
-            gap: "var(--space-lg)",
-          }}
-        >
-          <div className="badge badge--live">
-            <span style={{ fontSize: 16 }}>🚀</span> Now Available on Google Play
+        <section className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center gap-8">
+          <div className="border border-black px-4 py-1 text-sm font-medium tracking-wide uppercase">
+            <span>🚀</span> Now Available on Google Play
           </div>
 
-          <h1
-            style={{
-              fontSize: "clamp(1.75rem, 7vw, 3.25rem)",
-              fontWeight: 800,
-              color: "var(--text-primary)",
-              lineHeight: 1.1,
-              letterSpacing: "-0.03em",
-              margin: 0,
-            }}
-          >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-serif font-bold leading-tight tracking-tighter text-black m-0">
             Sharpen Your Mind.
             <br />
-            <span className="gradient-text">One Daily Challenge.</span>
+            One Daily Challenge.
           </h1>
 
-          <p
-            style={{
-              fontSize: "clamp(0.95rem, 2.5vw, 1.15rem)",
-              color: "var(--text-secondary)",
-              maxWidth: "50ch",
-              margin: "0 auto",
-              lineHeight: 1.6,
-              textWrap: "balance",
-            }}
-          >
+          <p className="text-lg md:text-xl text-black/80 max-w-prose mx-auto leading-relaxed">
             Introducing the <strong>Physics Bowl</strong> format. Keep your
             curiosity alive and your analytical skills sharp in the age of AI
             with a focused, daily physics problem.
@@ -72,34 +38,26 @@ export default function PhysDailyLanding() {
 
           <PlayStoreStatus />
 
-          <div
-            style={{
-              display: "flex",
-              gap: "var(--space-sm)",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              marginTop: "var(--space-xs)",
-            }}
-          >
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-4">
             <a
               href="https://play.google.com/store/apps/details?id=com.iprofilelabs.physdaily"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-block" }}
+              className="inline-flex border border-black hover:bg-black/5 transition-colors h-[58px] items-center justify-center px-2"
             >
               <Image
                 src="/img/google-play-badge.png"
                 alt="Get it on Google Play"
-                width={168}
-                height={50}
-                style={{ objectFit: "contain" }}
+                width={150}
+                height={45}
+                className="object-contain"
               />
             </a>
             <a
               href="http://ullaskunder.com/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
+              className="border border-black bg-black text-white hover:bg-white hover:text-black transition-colors px-6 h-[58px] flex items-center justify-center font-medium"
             >
               Contact Us
             </a>
@@ -108,10 +66,10 @@ export default function PhysDailyLanding() {
               href="http://ullaskunder.com/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs font-bold text-white/60 hover:text-white transition-all flex items-center gap-1.5 px-4 h-[50px] group/story"
+              className="text-sm font-bold text-black border-b border-black hover:border-black/0 transition-all flex items-center gap-1.5 h-[58px] group"
             >
-              <svg className="w-4 h-4 transition-transform group-hover/story:scale-110" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
-                 <path d="M7 7h10v10M7 17L17 7"/>
+              <svg className="w-4 h-4 transition-transform group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                 <path d="M5 12h14M12 5l7 7-7 7"/>
               </svg>
               Read the Building Story
             </a>
@@ -119,87 +77,28 @@ export default function PhysDailyLanding() {
         </section>
 
         {/* --- WIDE HERO BANNER --- */}
-        <section
-          style={{
-            maxWidth: "96rem",
-            margin: "var(--space-2xl) auto",
-            padding: "0 var(--space-md)",
-          }}
-        >
-          <div
-            className="glass"
-            style={{
-              position: "relative",
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.4)",
-              border: "1px solid rgba(255, 255, 255, 0.05)"
-            }}
-          >
-            <ZoomableImage
-              src="/img/phys-daily/mockup3.png"
-              alt="PhysDaily App flow showing dashboard, question, and completion screens"
-            />
-            <div
-              style={{
-                position: "absolute",
-                bottom: 0,
-                left: 0,
-                right: 0,
-                height: "20%",
-                background:
-                  "linear-gradient(to top, var(--bg-primary) 0%, transparent 100%)",
-                pointerEvents: "none",
-                zIndex: 2,
-              }}
-            />
+        <section className="max-w-7xl mx-auto my-24 px-6">
+          <div className="relative w-full border border-black p-2">
+            <div className="border border-black relative">
+              <ZoomableImage
+                src="/img/phys-daily/mockup3.png"
+                alt="PhysDaily App flow showing dashboard, question, and completion screens"
+              />
+            </div>
           </div>
         </section>
 
+        <hr className="border-black max-w-7xl mx-auto my-16" />
+
         {/* --- FEATURE GRID --- */}
-        <section
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-4xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
-            gap: "var(--space-2xl)",
-            alignItems: "center",
-          }}
-        >
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-              padding: "0 var(--space-md)",
-            }}
-          >
-            <h2
-              style={{
-                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: 0,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-            >
+        <section className="max-w-6xl mx-auto my-24 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center">
+          <div className="flex flex-col gap-6">
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-black m-0 tracking-tight leading-tight">
               The Science of
               <br />
               Satisfaction
             </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                textWrap: "balance",
-                lineHeight: 1.7,
-              }}
-            >
+            <p className="text-lg text-black/80 m-0 leading-relaxed max-w-lg">
               PhysDaily isn&apos;t just another quiz. It&apos;s a carefully
               designed tactile experience. From the satisfying feedback of the
               virtual keyboard to the glowing &quot;Correct!&quot; screens,
@@ -207,95 +106,42 @@ export default function PhysDailyLanding() {
             </p>
           </div>
 
-          <div
-            className="glass"
-            style={{
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-card)",
-              border: "1px solid rgba(255, 255, 255, 0.05)"
-            }}
-          >
-            <ZoomableImage
-              src="/img/phys-daily/mockup2.png"
-              alt="Close-up of the tactile virtual QWERTY keyboard and game interface"
-            />
+          <div className="w-full border border-black p-2">
+            <div className="border border-black relative">
+               <ZoomableImage
+                 src="/img/phys-daily/mockup2.png"
+                 alt="Close-up of the tactile virtual QWERTY keyboard and game interface"
+               />
+            </div>
           </div>
         </section>
+
+        <hr className="border-black max-w-7xl mx-auto my-16" />
 
         {/* --- MISSION --- */}
         <section
           id="story"
-          style={{
-            maxWidth: "80rem",
-            margin: "var(--space-4xl) auto",
-            padding: "0 var(--space-md)",
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fit, minmax(450px, 1fr))",
-            gap: "var(--space-2xl)",
-            alignItems: "center",
-          }}
+          className="max-w-6xl mx-auto my-24 px-6 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-24 items-center"
         >
-          <div
-            className="glass"
-            style={{
-              width: "100%",
-              borderRadius: "var(--radius-xl)",
-              overflow: "hidden",
-              boxShadow: "var(--shadow-card)",
-              border: "1px solid rgba(255, 255, 255, 0.05)",
-              order: -1,
-            }}
-          >
-            <ZoomableImage
-              src="/img/phys-daily/mockup1.png"
-              alt="Developer space with mechanical pencils and free-body diagrams"
-            />
+          <div className="w-full border border-black p-2 md:order-none order-last">
+            <div className="border border-black relative">
+               <ZoomableImage
+                 src="/img/phys-daily/mockup1.png"
+                 alt="Developer space with mechanical pencils and free-body diagrams"
+               />
+            </div>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              flexDirection: "column",
-              gap: "var(--space-md)",
-              padding: "0 var(--space-md)",
-            }}
-          >
-            <span
-              style={{
-                fontSize: "var(--text-xs)",
-                fontWeight: 600,
-                color: "var(--accent)",
-                textTransform: "uppercase",
-                letterSpacing: "0.12em",
-              }}
-            >
+          <div className="flex flex-col gap-6">
+            <span className="text-sm font-bold uppercase tracking-widest text-black border-b border-black pb-1 self-start">
               The Why
             </span>
-            <h2
-              style={{
-                fontSize: "clamp(1.75rem, 5vw, 2.5rem)",
-                fontWeight: 700,
-                color: "var(--text-primary)",
-                margin: 0,
-                letterSpacing: "-0.02em",
-                lineHeight: 1.1,
-              }}
-            >
+            <h2 className="text-3xl md:text-5xl font-serif font-bold text-black m-0 tracking-tight leading-tight">
               Curiosity in the
               <br />
               Age of AI
             </h2>
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                fontSize: "1.1rem",
-                margin: 0,
-                lineHeight: 1.7,
-                textWrap: "balance",
-              }}
-            >
+            <p className="text-lg text-black/80 m-0 leading-relaxed max-w-lg">
               Generative AI gives us answers instantly. But instant answers
               remove the joy of the struggle. We built{" "}
               <strong>PhysDaily</strong> to preserve the art of thinking.
@@ -303,16 +149,15 @@ export default function PhysDailyLanding() {
               invitation to stop scrolling, start deducing, and feel the thrill
               of solving a puzzle on your own.
             </p>
-            <div style={{ marginTop: "var(--space-sm)" }}>
+            <div className="mt-4">
               <a 
                 href="http://ullaskunder.com/blogs/shipping-physdaily-a-solo-engineer-s-blueprint-for-ai-powered-mobile-apps"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-bold text-white/60 hover:text-white transition-all"
+                className="inline-flex items-center gap-2 text-base font-bold text-black hover:opacity-70 transition-opacity"
               >
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
-                  <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
                 </svg>
                 Read the full story of how we built this
               </a>
@@ -320,134 +165,60 @@ export default function PhysDailyLanding() {
           </div>
         </section>
 
+        <hr className="border-black max-w-7xl mx-auto my-16" />
+
         {/* --- EARLY ACCESS CTA --- */}
         <section
           id="download"
-          style={{
-            maxWidth: "48rem",
-            margin: "var(--space-3xl) auto var(--space-2xl)",
-            padding: "var(--space-3xl) var(--space-2xl)",
-            textAlign: "center",
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "center",
-            gap: "var(--space-lg)",
-            position: "relative",
-            overflow: "hidden",
-          }}
+          className="max-w-3xl mx-auto my-24 px-6 text-center flex flex-col items-center gap-8 border border-black py-16"
         >
-          {/* Decorative glow */}
-          <div
-            style={{
-              position: "absolute",
-              width: 400,
-              height: 400,
-              borderRadius: "50%",
-              background: "var(--accent)",
-              filter: "blur(120px)",
-              opacity: 0.1,
-              top: "-50%",
-              left: "50%",
-              transform: "translateX(-50%)",
-              pointerEvents: "none",
-            }}
-          />
+          <div className="border border-black p-2">
+            <Image
+              src="/img/phys-daily/logo.png"
+              alt="PhysDaily Logo"
+              width={72}
+              height={72}
+              className="border border-black"
+            />
+          </div>
 
-          <Image
-            src="/img/phys-daily/logo.png"
-            alt="PhysDaily Logo"
-            width={72}
-            height={72}
-            style={{
-              borderRadius: 16,
-              boxShadow: "0 8px 32px rgba(0, 0, 0, 0.5)",
-              position: "relative",
-              zIndex: 1,
-            }}
-          />
-
-          <div style={{ position: "relative", zIndex: 1 }}>
-            <h2
-              style={{
-                fontSize: "clamp(1.5rem, 4vw, 2rem)",
-                fontWeight: 800,
-                margin: "0 0 var(--space-sm) 0",
-                color: "var(--text-primary)",
-                textWrap: "balance",
-                letterSpacing: "-0.02em",
-              }}
-            >
+          <div>
+            <h2 className="text-3xl md:text-4xl font-serif font-bold m-0 mb-4 text-black tracking-tight">
               Now Available!
             </h2>
 
-            <p
-              style={{
-                color: "var(--text-secondary)",
-                margin: "0 auto",
-                maxWidth: "42ch",
-                textWrap: "balance",
-                lineHeight: 1.6,
-                fontSize: "clamp(0.95rem, 2vw, 1.1rem)",
-              }}
-            >
+            <p className="text-lg text-black/80 max-w-prose mx-auto leading-relaxed">
               PhysDaily has officially launched. Download it today and start your journey of solving daily physics challenges.
             </p>
           </div>
 
-          <div
-            style={{
-              display: "flex",
-              gap: "var(--space-md)",
-              flexWrap: "wrap",
-              justifyContent: "center",
-              position: "relative",
-              zIndex: 1,
-              marginTop: "var(--space-xs)",
-            }}
-          >
+          <div className="flex flex-wrap items-center justify-center gap-4 mt-2">
             <a
               href="https://play.google.com/store/apps/details?id=com.iprofilelabs.physdaily"
               target="_blank"
               rel="noopener noreferrer"
-              style={{ display: "inline-block" }}
+              className="inline-flex border border-black hover:bg-black/5 transition-colors h-[68px] items-center justify-center px-4"
             >
               <Image
                 src="/img/google-play-badge.png"
                 alt="Get it on Google Play"
-                width={200}
-                height={60}
-                style={{ objectFit: "contain" }}
+                width={180}
+                height={54}
+                className="object-contain"
               />
             </a>
             <a
               href="http://ullaskunder.com/contact"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn-outline"
-              style={{ padding: "0.875rem 1.75rem", fontSize: "1rem" }}
+              className="border border-black bg-black text-white hover:bg-white hover:text-black transition-colors px-8 h-[68px] flex items-center justify-center font-medium text-lg"
             >
               Contact Directly
             </a>
           </div>
 
-          <div
-            style={{
-              marginTop: "var(--space-md)",
-              padding: "var(--space-sm) var(--space-md)",
-              position: "relative",
-              zIndex: 1,
-            }}
-          >
-            <p
-              style={{
-                fontSize: "0.89rem",
-                color: "var(--text-secondary)",
-                margin: 0,
-                fontStyle: "italic",
-                textWrap: "balance",
-                fontWeight: 500,
-              }}
-            >
+          <div className="mt-8 px-6 border-t border-black pt-8">
+            <p className="text-sm text-black/60 italic font-medium max-w-md mx-auto">
               We promise not to spam you. We don&apos;t have the energy for
               that. It&apos;s a one-time thing, not a sales pitch. 🫡
             </p>
@@ -455,46 +226,17 @@ export default function PhysDailyLanding() {
         </section>
 
         {/* --- LEGAL FINE PRINT --- */}
-        <div
-          style={{
-            marginBottom: "20px",
-            display: "flex",
-            justifyContent: "center",
-            gap: "var(--space-xl)",
-            alignItems: "center",
-          }}
-        >
+        <div className="mb-8 flex justify-center items-center gap-6 text-sm font-medium text-black/60">
           <Link
             href="/phys-daily/privacy"
-            style={{
-              fontSize: "0.85rem",
-              color: "var(--text-secondary)",
-              textDecoration: "none",
-              borderBottom: "1px solid transparent",
-              transition: "all 0.2s ease",
-              fontWeight: 500,
-            }}
+            className="hover:text-black transition-colors"
           >
             Privacy Policy
           </Link>
-          <div
-            style={{
-              width: 4,
-              height: 4,
-              borderRadius: "50%",
-              background: "var(--border)",
-            }}
-          />
+          <div className="w-1 h-1 bg-black rounded-full" />
           <Link
             href="/phys-daily/terms"
-            style={{
-              fontSize: "0.85rem",
-              color: "var(--text-secondary)",
-              textDecoration: "none",
-              borderBottom: "1px solid transparent",
-              transition: "all 0.2s ease",
-              fontWeight: 500,
-            }}
+            className="hover:text-black transition-colors"
           >
             Terms &amp; Conditions
           </Link>
@@ -502,6 +244,6 @@ export default function PhysDailyLanding() {
       </main>
 
       <Footer />
-    </>
+    </div>
   );
 }

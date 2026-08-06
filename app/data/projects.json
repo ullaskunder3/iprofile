@@ -165,5 +165,33 @@
         ],
         "details": "Turai Blog replaces the friction of creating blog posts through the terminal with a clean, purpose-built editor. Manage posts, preview content, and attach cover images — all in a fast, local environment powered by Tauri and React.",
         "gallery": []
+    },
+    {
+        "id": "phys-daily",
+        "title": "PhysDaily",
+        "tagline": "The Physics Bowl",
+        "description": "Gamified physics challenges — high-stakes, real-time problem sets.",
+        "year": 2026,
+        "role": "Creator / Developer",
+        "status": "live",
+        "liveUrl": "/phys-daily",
+        "repoUrl": null,
+        "achievements": [
+            "Gamified physics challenges",
+            "Real-time problem sets",
+            "Available on Google Play"
+        ],
+        "technologies": [
+            "Flutter",
+            "Dart",
+            "Firebase"
+        ],
+        "details": "PhysDaily is a physics challenge app designed to sharpen your mind.",
+        "gallery": [
+            {
+                "src": "/img/phys-daily/image.png",
+                "alt": "PhysDaily interface"
+            }
+        ]
     }
 ]
