@@ -6,7 +6,7 @@ import Logo from "./Logo";
 export default function Header() {
   return (
     <header
-      className="animate-in fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 bg-white/90 backdrop-blur-md border-b-2 border-black"
+      className="animate-in fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 bg-white/90 backdrop-blur-md"
     >
       <Link
         href="/"

@@ -19,8 +19,11 @@ export default function PinTubeLanding() {
       <main className="pt-24 pb-16">
         {/* --- HERO SECTION --- */}
         <section className="max-w-5xl mx-auto px-6 flex flex-col items-center text-center gap-8 pb-16 border-b-2 border-black">
-          <div className="border-2 border-black px-4 py-1 text-sm font-bold uppercase tracking-widest bg-white text-black">
-            Available on Chrome Web Store
+          <div className="border-2 border-black px-4 py-1 text-sm font-bold uppercase tracking-widest bg-black text-white flex items-center gap-2">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+            </svg>
+            Featured on Chrome Web Store
           </div>
 
           <Image

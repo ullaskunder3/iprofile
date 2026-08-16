@@ -16,6 +16,7 @@ interface ProjectCardProps {
   details: string;
   index: number;
   stats?: string;
+  featured?: boolean;
 }
 
 export default function ProjectCard({
@@ -32,6 +33,7 @@ export default function ProjectCard({
   details,
   index,
   stats,
+  featured,
 }: ProjectCardProps) {
   const delay = 300 + index * 150;
 
@@ -94,28 +96,53 @@ export default function ProjectCard({
           </span>
         </div>
 
-        {stats && (
-          <div style={{ marginTop: "0.25rem", marginBottom: "0.25rem" }}>
-            <span
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "0.25rem",
-                padding: "0.25rem 0.75rem",
-                borderRadius: "9999px",
-                background: "var(--accent)",
-                color: "var(--bg-primary)",
-                fontSize: "var(--text-xs)",
-                fontWeight: 600,
-                letterSpacing: "0.02em",
-                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-              }}
-            >
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
-              </svg>
-              {stats}
-            </span>
+        {(stats || featured) && (
+          <div style={{ marginTop: "0.25rem", marginBottom: "0.25rem", display: "flex", flexWrap: "wrap", gap: "0.5rem", alignItems: "center" }}>
+            {featured && (
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.35rem",
+                  padding: "0.25rem 0.75rem",
+                  borderRadius: "9999px",
+                  background: "rgba(234, 179, 8, 0.12)",
+                  color: "#b45309",
+                  fontSize: "var(--text-xs)",
+                  fontWeight: 700,
+                  letterSpacing: "0.06em",
+                  border: "1px solid rgba(234, 179, 8, 0.4)",
+                  textTransform: "uppercase",
+                }}
+              >
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                </svg>
+                Featured by Google
+              </span>
+            )}
+            {stats && (
+              <span
+                style={{
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "0.25rem",
+                  padding: "0.25rem 0.75rem",
+                  borderRadius: "9999px",
+                  background: "var(--accent)",
+                  color: "var(--bg-primary)",
+                  fontSize: "var(--text-xs)",
+                  fontWeight: 600,
+                  letterSpacing: "0.02em",
+                  boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+                }}
+              >
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                </svg>
+                {stats}
+              </span>
+            )}
           </div>
         )}
 

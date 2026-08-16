@@ -1,7 +1,6 @@
 "use client";
 
 import React from "react";
-import Link from "next/link";
 
 export default function ExtensionStatus() {
   return (
@@ -10,8 +9,8 @@ export default function ExtensionStatus() {
       style={{
         width: "100%",
         padding: "var(--space-md)",
-        background: "rgba(0, 0, 0, 0.02)",
-        border: "1px solid rgba(16, 185, 129, 0.2)",
+        background: "rgba(234, 179, 8, 0.04)",
+        border: "1px solid rgba(234, 179, 8, 0.35)",
         borderRadius: "var(--radius-lg)",
         textAlign: "left",
         position: "relative",
@@ -28,27 +27,23 @@ export default function ExtensionStatus() {
           position: "absolute",
           top: "-50%",
           right: "-10%",
-          width: "120px",
-          height: "120px",
-          background: "#10b981",
-          filter: "blur(50px)",
-          opacity: 0.08,
+          width: "140px",
+          height: "140px",
+          background: "#eab308",
+          filter: "blur(55px)",
+          opacity: 0.12,
           zIndex: 0,
         }}
       />
 
       <div style={{ position: "relative", zIndex: 1, display: "flex", flexDirection: "column", gap: "4px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "4px" }}>
-          <span style={{ 
-            width: "8px", 
-            height: "8px", 
-            borderRadius: "50%", 
-            background: "#10b981", 
-            boxShadow: "0 0 10px rgba(16, 185, 129, 0.4)",
-            display: "inline-block"
-          }} />
-          <span style={{ fontSize: "var(--text-xs)", fontWeight: 600, color: "#059669", letterSpacing: "0.02em", textTransform: "uppercase" }}>
-            Available Now
+          {/* Star icon */}
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+          </svg>
+          <span style={{ fontSize: "var(--text-xs)", fontWeight: 700, color: "#b45309", letterSpacing: "0.08em", textTransform: "uppercase" }}>
+            Featured by Google
           </span>
         </div>
 
@@ -58,7 +53,7 @@ export default function ExtensionStatus() {
           fontWeight: 600, 
           margin: 0 
         }}>
-          v1.3 Live on Chrome Web Store
+          Pin-Tube is Featured on Chrome Web Store 🎉
         </h4>
         <p style={{ 
           fontSize: "12px", 
@@ -67,7 +62,7 @@ export default function ExtensionStatus() {
           lineHeight: 1.5,
           opacity: 0.9
         }}>
-          The smart YouTube Pinner update has been approved and is now public!
+          Handpicked by Google — now live and available for everyone!
         </p>
       </div>
 
@@ -83,11 +78,11 @@ export default function ExtensionStatus() {
           gap: "0.5rem",
           padding: "0.5rem 1rem",
           borderRadius: "var(--radius-md)",
-          background: "rgba(16, 185, 129, 0.1)",
-          color: "#059669",
+          background: "rgba(234, 179, 8, 0.12)",
+          color: "#b45309",
           fontSize: "0.75rem",
-          fontWeight: 600,
-          border: "1px solid rgba(16, 185, 129, 0.2)",
+          fontWeight: 700,
+          border: "1px solid rgba(234, 179, 8, 0.35)",
           whiteSpace: "nowrap",
           textDecoration: "none",
           transition: "all 0.2s ease"

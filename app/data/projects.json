@@ -47,9 +47,11 @@
         "year": 2026,
         "role": "Creator / Developer",
         "status": "live",
+        "featured": true,
         "liveUrl": "/pin-tube",
         "repoUrl": null,
         "achievements": [
+            "Featured by Google on the Chrome Web Store",
             "Seamless UI Integration with YouTube's native player",
             "Dynamic Grid Parity adapting to YouTube's CSS variables",
             "Smart Resume Engine saving exact playback timestamps",
@@ -64,8 +66,8 @@
             "Terser",
             "CSS"
         ],
-        "stats": "88 Active Installs",
-        "details": "Pin-Tube is a smart Chrome Extension engineered to stop doom-scrolling and keep track of videos. It injects a pushpin button into the player, hides Shorts and tag chips, and remembers exactly where you left off.",
+        "stats": "132 Total Installs",
+        "details": "Pin-Tube is a smart Chrome Extension engineered to stop doom-scrolling and keep track of videos. It injects a pushpin button into the player, hides Shorts and tag chips, and remembers exactly where you left off. Featured by Google on the Chrome Web Store.",
         "gallery": [
             {
                 "src": "/img/pin-tube/first.png",

@@ -37,6 +37,24 @@ export default function Hero() {
         </div>
 
         <div className="flex-1 flex flex-col justify-center">
+
+          {/* ★ Featured Announcement */}
+          <a
+            href="/pin-tube"
+            className="group inline-flex items-center gap-3 mb-10 self-start"
+            style={{ textDecoration: "none" }}
+          >
+            <span className="flex items-center gap-2 bg-black text-white font-mono text-xs tracking-widest uppercase px-3 py-1.5">
+              <svg width="10" height="10" viewBox="0 0 24 24" fill="#eab308" stroke="#eab308" strokeWidth="1">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+              </svg>
+              Featured by Google
+            </span>
+            <span className="font-mono text-xs tracking-widest uppercase text-gray-500 border-b border-transparent group-hover:border-black transition-all duration-100">
+              Pin-Tube · Chrome Web Store →
+            </span>
+          </a>
+
           {/* Oversized Typography */}
           <h1 className="font-display leading-[0.85] tracking-tighter uppercase mb-12 w-full">
             <div className="text-[clamp(2rem,6.5vw,5rem)] mb-2 md:mb-4">Simple software,</div>
@@ -68,59 +86,29 @@ export default function Hero() {
         </div>
       </section>
 
-      {/* ═══ PIN-TUBE LIVE STATS BANNER ═══ */}
-      <section className="w-full border-t-2 border-b-2 border-black bg-white text-black py-12 px-6 md:px-12">
-        <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
-          <div className="flex flex-col">
-            <span className="font-mono text-sm tracking-widest uppercase text-gray-500 mb-2 border-l-2 border-black pl-2">Live Extension Stats</span>
-            <h2 className="font-display text-5xl md:text-6xl tracking-tighter uppercase mb-0 leading-none">
-              Pin-Tube
-            </h2>
-          </div>
-          
-          <div className="flex flex-wrap items-center gap-12 md:gap-24">
-            <div className="flex flex-col items-start">
-              <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter leading-none mb-2">
-                88
-              </span>
-              <span className="font-mono text-sm tracking-widest uppercase text-gray-500">
-                Active Users
-              </span>
-            </div>
-            <div className="flex flex-col items-start">
-              <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter leading-none mb-2 text-gray-400">
-                99
-              </span>
-              <span className="font-mono text-sm tracking-widest uppercase text-gray-400">
-                Total Installs
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
       {/* ═══ INVERTED STATS SECTION ═══ */}
-      <section className="w-full bg-black text-white py-24 px-6 md:px-12 relative overflow-hidden">
+      <section className="w-full bg-black text-white py-16 px-6 md:px-12 relative overflow-hidden">
         {/* Inverted Vertical Line Texture */}
         <div className="absolute inset-0 opacity-5 pointer-events-none" style={{
           backgroundImage: "repeating-linear-gradient(90deg, transparent, transparent 1px, #fff 1px, #fff 2px)",
           backgroundSize: "4px 100%"
         }}></div>
 
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12 z-10 relative border-t-4 border-white pt-12">
-          <div className="flex flex-col gap-2 min-w-0">
-            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Total Installs</span>
-            <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter truncate">10,000+</span>
+        <div className="w-full z-10 relative grid grid-cols-1 md:grid-cols-3 border-t-4 border-white pt-10">
+          <div className="flex flex-col gap-1 pr-8 md:pr-12 pb-8 md:pb-0">
+            <span className="font-mono text-xs tracking-widest uppercase text-gray-400">Total Installs</span>
+            <span className="font-display text-[clamp(4rem,6vw,5.5rem)] tracking-tighter leading-none mt-2">132</span>
+            <span className="font-mono text-xs tracking-widest text-gray-600 mt-2">All-time · Chrome Web Store</span>
           </div>
-          <div className="flex flex-col gap-2 min-w-0">
-            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Open Source</span>
-            <span className="font-display text-[clamp(4rem,7vw,6rem)] tracking-tighter truncate">100%</span>
+          <div className="flex flex-col gap-1 px-8 md:px-12 border-t-2 md:border-t-0 md:border-l-2 border-white border-opacity-20 py-8 md:py-0">
+            <span className="font-mono text-xs tracking-widest uppercase text-gray-400">Active Users</span>
+            <span className="font-display text-[clamp(4rem,6vw,5.5rem)] tracking-tighter leading-none mt-2">29</span>
+            <span className="font-mono text-xs tracking-widest text-gray-600 mt-2">Last 30 days · +383% MoM</span>
           </div>
-          <div className="flex flex-col gap-2 min-w-0">
-            <span className="font-mono text-sm tracking-widest uppercase text-gray-400">Approach</span>
-            <span className="font-display text-[clamp(2.5rem,4vw,3.5rem)] tracking-tighter uppercase leading-[1.1] break-words">
-              Language<br/>Agnostic
-            </span>
+          <div className="flex flex-col gap-1 pl-8 md:pl-12 border-t-2 md:border-t-0 md:border-l-2 border-white border-opacity-20 pt-8 md:pt-0">
+            <span className="font-mono text-xs tracking-widest uppercase text-gray-400">New Installs</span>
+            <span className="font-display text-[clamp(4rem,6vw,5.5rem)] tracking-tighter leading-none mt-2">44</span>
+            <span className="font-mono text-xs tracking-widest text-gray-600 mt-2">Last 30 days · +29% vs prev</span>
           </div>
         </div>
       </section>
