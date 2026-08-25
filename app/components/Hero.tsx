@@ -28,7 +28,7 @@ export default function Hero() {
       <div className="texture-lines" />
 
       {/* ═══ MINIMALIST MONOCHROME HERO ═══ */}
-      <section className="relative w-full min-h-[90vh] flex flex-col pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto z-10">
+      <section id="hero" className="relative w-full min-h-[90vh] flex flex-col pt-32 pb-16 px-6 md:px-12 max-w-7xl mx-auto z-10">
         
         {/* Decorative Element: Thick rule with small bordered square */}
         <div className="w-full flex items-center gap-4 mb-16">
@@ -165,7 +165,7 @@ export default function Hero() {
       </section>
 
       {/* ═══ JOURNAL ═══ */}
-      <section className="w-full py-32 px-6 md:px-12 bg-white border-t-8 border-black">
+      <section id="journal" className="w-full py-32 px-6 md:px-12 bg-white border-t-8 border-black">
         <div className="max-w-7xl mx-auto">
           <div className="w-full border-b-2 border-black pb-4 mb-16 flex justify-between items-end">
             <h2 className="font-display text-5xl tracking-tighter uppercase">Journal</h2>

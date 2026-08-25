@@ -3,6 +3,8 @@ import { Playfair_Display, Source_Serif_4, JetBrains_Mono } from "next/font/goog
 import "./globals.css";
 import SmoothScroll from "./components/SmoothScroll";
 
+import Sidebar from "./components/Sidebar";
+
 const playfair = Playfair_Display({
   variable: "--font-playfair",
   subsets: ["latin"],
@@ -97,7 +99,10 @@ export default function RootLayout({
       <body
         className={`${playfair.variable} ${sourceSerif.variable} ${jetbrainsMono.variable} antialiased bg-white text-black font-serif`}
       >
-        <SmoothScroll>{children}</SmoothScroll>
+        <Sidebar />
+        <div className="md:pl-16 transition-[padding] duration-300 min-h-screen flex flex-col">
+          <SmoothScroll>{children}</SmoothScroll>
+        </div>
       </body>
     </html>
   );

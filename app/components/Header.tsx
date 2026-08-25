@@ -6,20 +6,9 @@ import Logo from "./Logo";
 export default function Header() {
   return (
     <header
-      className="animate-in fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-4 md:px-8 py-3 md:py-4 bg-white/90 backdrop-blur-md"
+      className="animate-in fixed top-0 left-0 md:left-[64px] right-0 z-40 flex items-center justify-end px-4 md:px-8 py-3 md:py-4 bg-transparent pointer-events-none transition-[left] duration-300"
     >
-      <Link
-        href="/"
-        style={{
-          textDecoration: "none",
-          display: "flex",
-          alignItems: "center",
-        }}
-      >
-        <Logo size="md" />
-      </Link>
-
-      <div className="flex items-center gap-2 md:gap-4">
+      <div className="flex items-center gap-2 md:gap-4 pointer-events-auto">
         <a
           href="https://cal.com/ullaskunder"
           className="btn-primary hidden md:inline-flex"

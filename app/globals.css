@@ -64,8 +64,16 @@
 
 *, *::before, *::after {
   box-sizing: border-box;
-  border-radius: 0px !important; /* Enforce architectural edges globally */
 }
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
 
 html {
   scroll-behavior: smooth;
