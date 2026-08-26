@@ -121,7 +121,7 @@ export default function Hero() {
         </div>
 
         <div className="flex flex-col gap-12">
-          {projectsData.filter(p => ["kanade", "pin-tube", "phys-daily"].includes(p.id)).map((project, index) => (
+          {projectsData.filter(p => ["mypropad", "kanade", "pin-tube", "phys-daily"].includes(p.id)).map((project, index) => (
             <Link 
               key={project.id}
               href={`/${project.id}`}

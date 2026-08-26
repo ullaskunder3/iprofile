@@ -1,5 +1,39 @@
 [
     {
+        "id": "mypropad",
+        "title": "MyProPad",
+        "tagline": "Turn your phone into a high-precision trackpad",
+        "description": "The trackpad you already own. Control your computer effortlessly from your mobile browser with zero mobile apps to install.",
+        "year": 2026,
+        "role": "Creator / Lead Developer",
+        "status": "live",
+        "liveUrl": "/mypropad",
+        "repoUrl": "https://github.com/ullaskunder3/mypropad",
+        "achievements": [
+            "120Hz Motion Engine with non-blocking WebSocket movement coalescing for lag-free cursor tracking",
+            "Instant pairing via scannable QR code — zero mobile apps or user accounts required",
+            "100% Local Wi-Fi Privacy — touch inputs remain strictly within your local network",
+            "Native multi-touch gestures (1-finger drag/tap for left click, 2-finger tap for right click, 2-finger drag for scrolling)",
+            "Sub-pixel float accumulator preventing cursor jitter during slow precision movements",
+            "Cross-platform Go backend interfacing with Linux uinput Kernel and AppImage packaging"
+        ],
+        "technologies": [
+            "Go",
+            "Astro",
+            "WebSockets",
+            "TypeScript",
+            "Tailwind CSS",
+            "Linux uinput"
+        ],
+        "details": "MyProPad turns your smartphone into a high-precision virtual trackpad for your desktop with zero mobile apps to install. Built with a Go server driving Linux kernel uinput subsystem, 120Hz WebSocket motion engine, instant QR code pairing, and native multi-touch gestures.",
+        "gallery": [
+            {
+                "src": "/img/mypropad/mypropad.png",
+                "alt": "MyProPad Logo & Concept"
+            }
+        ]
+    },
+    {
         "id": "kanade",
         "title": "Kanade",
         "tagline": "Zero-Frustration Synthesizer & AI Composer",
