@@ -16,6 +16,7 @@ import {
   Pin,
   Calendar,
   MousePointer,
+  BookOpen,
 } from "lucide-react";
 import siteData from "../data/site.json";
 
@@ -33,6 +34,7 @@ const homeSections = [
 
 const navItems = [
   { label: "Home", href: "/", icon: Home },
+  { label: "Kiroku", href: "/kiroku", icon: BookOpen },
   { label: "MyProPad", href: "/mypropad", icon: MousePointer },
   { label: "Kanade", href: "/kanade", icon: Sparkles },
   { label: "Pin-Tube", href: "/pin-tube", icon: Pin },

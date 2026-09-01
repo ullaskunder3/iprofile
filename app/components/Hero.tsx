@@ -73,11 +73,11 @@ export default function Hero() {
                 {siteData.subheadline}
               </p>
               
-              <div className="flex flex-wrap items-center gap-4 md:gap-6">
-                <Link href="#projects" className="btn-primary">
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 md:gap-6 w-full sm:w-auto">
+                <Link href="#projects" className="btn-primary w-full sm:w-[240px] text-center justify-center">
                   Explore Projects
                 </Link>
-                <Link href="https://github.com/ullaskunder3" className="btn-outline">
+                <Link href="https://github.com/ullaskunder3" className="btn-outline w-full sm:w-[240px] text-center justify-center">
                   View on GitHub
                 </Link>
               </div>

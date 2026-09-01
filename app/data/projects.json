@@ -1,5 +1,38 @@
 [
     {
+        "id": "kiroku",
+        "title": "Kiroku",
+        "tagline": "Minimalist Living Library & Distraction-Free Workspace",
+        "description": "A high-speed, local-first living library and distraction-free rich text editor combining fluid Markdown editing with a structured 4-tier knowledge hierarchy.",
+        "year": 2026,
+        "role": "Creator / Lead Developer",
+        "status": "coming-soon",
+        "liveUrl": "/kiroku",
+        "repoUrl": null,
+        "achievements": [
+            "Structured 4-tier Knowledge Tree (Library → Book → Chapter → Page) for clean documentation hierarchy",
+            "900ms debounced auto-save engine with programmatic update suppression to eliminate redundant writes",
+            "Sub-millisecond local SQLite and edge LibSQL database operations with zero ORM overhead",
+            "Dynamic elastic caret physics and theme-tinted dynamic text selection box",
+            "Serene distraction-free typewriter focus canvas with native math, diagrams, and instant Markdown rendering"
+        ],
+        "technologies": [
+            "Next.js",
+            "TypeScript",
+            "TipTap",
+            "Tailwind CSS",
+            "SQLite",
+            "LibSQL"
+        ],
+        "details": "Kiroku is a minimalist living library engineered for technical teams, documentation authors, and personal knowledge bases. Combining the fluid editing of iA Writer and Notion with the operational stability of Google Docs, it features sub-millisecond edge database sync, dynamic caret physics, 900ms debounced auto-save protection, and a structured 4-tier knowledge hierarchy.",
+        "gallery": [
+            {
+                "src": "/img/kiroku/og.png",
+                "alt": "Kiroku Minimalist Living Library"
+            }
+        ]
+    },
+    {
         "id": "mypropad",
         "title": "MyProPad",
         "tagline": "Turn your phone into a high-precision trackpad",

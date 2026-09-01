@@ -9,6 +9,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
     },
     {
+      url: 'https://www.xforbes.com/kiroku',
+      lastModified: new Date(),
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: 'https://www.xforbes.com/phys-daily',
       lastModified: new Date(),
       changeFrequency: 'monthly',

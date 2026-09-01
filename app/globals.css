@@ -151,6 +151,7 @@ body {
   cursor: pointer;
   transition: all 100ms linear;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -180,6 +181,7 @@ body {
   cursor: pointer;
   transition: all 100ms linear;
   text-decoration: none;
+  white-space: nowrap;
 }
 
 .btn-outline:hover {
